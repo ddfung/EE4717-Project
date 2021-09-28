@@ -1,0 +1,183 @@
+header {
+    background-color: #CEA965;
+    height: 150px;
+    background-image: url(javalogo.gif);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+nav {   
+    font-weight: bold;
+    text-align: center;
+    font-size: 18px;
+    padding-top: 10px;
+    float: left;
+    width: 180px;
+}
+
+nav ul { list-style-type: none; padding-left: 0px;}
+nav a {text-decoration: none;}
+nav a:link {color: #744D26;}
+nav a:visited {color: #AB8560;}
+nav a:hover {color: red;}
+
+#roadimage {
+    background-image: url(windingRoad.jpg);
+    background-size: 100% 100%;
+    height: 150px;
+    width: 350px;
+    margin-left: 30px;
+    margin-right: 40px;
+    float: left;
+}
+
+main {
+    padding: 10px 10px 66px 14px;
+    margin-left: 180px;
+    background-color: #F4EBCA;
+    color: #2b1d0e;
+}
+
+h2 {
+    font-size: 25px;
+    color: #2b1d0e;
+}
+
+#homelist {
+    list-style-image: url(coffee.png);
+}
+
+table.menutable {
+    margin-left: 60px;
+    margin-right: 60px;
+    border: 5px; 
+    padding-right: 10px;
+    border-spacing: 0;
+    line-height: 18px;
+}
+
+table.menutable td, th {
+    padding: 15px;
+    font-family: Verdana, sans-serif;
+    font-size: 13px;
+    border-style: none;
+}
+
+table.menutable td:first-child, th:first-child {
+ border-right: 1px solid #F4EBCA;
+}
+
+table.menutable td {
+    padding-left: 8px;
+    padding-right: 32px;
+    line-height: 18px;
+}
+
+table.menutable th {
+    text-align: center;
+    font-size: 14px;
+    width: 100px;
+    padding: 5px;
+}
+
+table.menutable tr:nth-of-type(even) {
+    background-color: #F4EBCA;
+    color: #3B230B;
+}
+
+table.menutable tr:nth-of-type(odd) {
+    background-color: #CEA965;
+    color: #3B230B;
+}
+
+.month {
+    background: #d1b38e;
+    font-weight: bold;
+    font-size: large;
+}
+
+#musicTable {
+    width: 85%;
+    margin: auto;
+    border-spacing: 0px;
+    padding-left: 60px;
+    padding-right: 50px;
+}
+
+#musicTable td:nth-of-type(even){
+    padding-bottom: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+#musicImage {
+    flex-grow: 1;
+}
+.musicImage img {
+    width: 80%;
+    height: 80%;
+    padding-left: 20px;
+}
+
+form {
+    font-family: Verdana, Arial, sans-serif;
+    width: 420px; 
+    height: 200px;
+}
+
+label {
+    /* display: inline-block; */
+    float: left;
+    clear: left;
+    width: 100px;
+    text-align: right;
+    margin-bottom: 14px;
+}
+
+input[type=text], input[type=date], input[type=email], textarea {
+    float: left;
+    margin-left: 50px;
+    /* display: inline-block; */
+    margin-bottom: 14px;
+}
+
+input[type=submit], input[type=reset] {
+    margin-top: 20px;
+    margin-right: 200px;
+    float: left;
+}
+
+body {
+    margin: auto; 
+    background-color: #FCEBB6;
+    font-size: 13px;
+    width: 1000px;
+    color: #3B230B;
+    font-family: Verdana, Arial, sans-serif;
+
+}
+
+footer {
+    background-color: #CEA965;
+    font-size: 11px;
+    font-style: italic;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+#wrapper {
+    background-color: #DCC897;
+}
+
+head, footer, #wrapper {
+    margin-left: 40px;
+    margin-right: 40px;
+    box-shadow: 5px 5px 8px black;
+    color: #000000;
+}
+
+.contact a {
+    color: #3B230B;
+}
