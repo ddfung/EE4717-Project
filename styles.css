@@ -1,25 +1,40 @@
 header {
-    background-color: #CEA965;
-    height: 150px;
-    background-image: url(javalogo.gif);
-    background-repeat: no-repeat;
-    background-position: center;
+    background-color: rgb(247, 188, 100);
+    height: 130px;
+    display: flex;
+    justify-content: center;
+    /* font-family: Arial, Helvetica, sans-serif; */
+}
+
+h1 {
+    font-size: 50px;
+    color: #000000;
+    text-align: center;
+
 }
 
 nav {   
+    background-color: #FFFFFF;
     font-weight: bold;
     text-align: center;
     font-size: 18px;
     padding-top: 10px;
-    float: left;
-    width: 180px;
+    padding-bottom: 10px;
 }
 
-nav ul { list-style-type: none; padding-left: 0px;}
-nav a {text-decoration: none;}
-nav a:link {color: #744D26;}
-nav a:visited {color: #AB8560;}
-nav a:hover {color: red;}
+nav a {
+    text-decoration: none;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+nav a:link {color: black;}
+nav a:visited {color: grey;}
+nav a:hover {color: rgb(247, 188, 100);}
+
+.slideshow {
+    justify-content: center;
+    display: flex;
+}
 
 #roadimage {
     background-image: url(assets/nikeAirForce1/white1.png);
@@ -33,61 +48,75 @@ nav a:hover {color: red;}
 
 main {
     padding: 10px 10px 66px 14px;
-    margin-left: 180px;
-    background-color: #F4EBCA;
+    background-color: rgb(199, 205, 207);
     color: #2b1d0e;
 }
 
 h2 {
-    font-size: 25px;
-    color: #2b1d0e;
-}
-
-#homelist {
-    list-style-image: url(coffee.png);
-}
-
-table.menutable {
-    margin-left: 60px;
-    margin-right: 60px;
-    border: 5px; 
-    padding-right: 10px;
-    border-spacing: 0;
-    line-height: 18px;
-}
-
-table.menutable td, th {
-    padding: 15px;
-    font-family: Verdana, sans-serif;
-    font-size: 13px;
-    border-style: none;
-}
-
-table.menutable td:first-child, th:first-child {
- border-right: 1px solid #F4EBCA;
-}
-
-table.menutable td {
-    padding-left: 8px;
-    padding-right: 32px;
-    line-height: 18px;
-}
-
-table.menutable th {
+    background-color: white;
+    font-size: 30px;
+    color: black;
     text-align: center;
-    font-size: 14px;
-    width: 100px;
-    padding: 5px;
+    border-style: solid;
+    border-width: 2px;
 }
 
-table.menutable tr:nth-of-type(even) {
-    background-color: #F4EBCA;
-    color: #3B230B;
+.shoetable td {
+    padding-top: 10px;
+    /* padding-bottom: 10px; */
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
-table.menutable tr:nth-of-type(odd) {
-    background-color: #CEA965;
-    color: #3B230B;
+.shoetable tr:nth-of-type(odd) {
+    text-align: center;
+    width: 100%;
+}
+
+.shoetable tr:nth-of-type(even) {
+    width: 100%;
+    font-weight: bold;
+}
+
+#shoe {
+    max-width:100%;
+    max-height:100%;
+}
+
+.flex-row-container {
+    background: #aaa;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.flex-row-item1 {
+    flex: 30%;
+    background-color: #FFFFFF;
+    padding-left: 15px;
+    padding-right: 15px;
+    height: 175px;
+
+}
+.flex-row-item2 {
+    flex: 25%;
+    background-color: #FFFFFF;
+    padding-left: 15px;
+    padding-right: 15px;
+    height: 175px;
+
+}
+.flex-row-item3 {
+    flex: 35%;
+    background-color: #FFFFFF;
+    padding-left: 15px;
+    padding-right: 15px;
+    height: 175px;
+}
+
+#paymentImage {
+    width: 100%;
 }
 
 .month {
@@ -149,7 +178,7 @@ input[type=submit], input[type=reset] {
 
 body {
     margin: auto; 
-    background-color: #FCEBB6;
+    background-color: #FFFFFF;
     font-size: 13px;
     width: 1000px;
     color: #3B230B;
@@ -158,17 +187,17 @@ body {
 }
 
 footer {
-    background-color: #CEA965;
+    background-color: #FFFFFF;
     font-size: 11px;
     font-style: italic;
-    text-align: center;
+    /* text-align: center; */
     padding-top: 10px;
     padding-bottom: 10px;
     margin-bottom: 20px;
 }
 
 #wrapper {
-    background-color: #DCC897;
+    background-color: #FFFFFF;
 }
 
 head, footer, #wrapper {
