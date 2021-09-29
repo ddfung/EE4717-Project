@@ -1,28 +1,26 @@
 header {
-    background-color: rgb(247, 188, 100);
+    background-color: #BBBFCA;
     height: 130px;
     display: flex;
     justify-content: center;
-    /* font-family: Arial, Helvetica, sans-serif; */
+    border: 1px solid #495464;
+    border-right: none;
+    border-left: none;
 }
 
 h1 {
     font-size: 50px;
     color: #000000;
     text-align: center;
-
 }
 
 nav {   
-    background-color: #FFFFFF;
+    background-color: #E8E8E8;
     font-weight: bold;
     text-align: center;
     font-size: 18px;
     padding-top: 10px;
     padding-bottom: 10px;
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
-
 }
 
 nav a {
@@ -30,8 +28,8 @@ nav a {
     padding-left: 20px;
     padding-right: 20px;
 }
-nav a:link {color: black;}
-nav a:visited {color: grey;}
+nav a:link {color: #000000;}
+nav a:visited {color: #000000;}
 nav a:hover {color: rgb(247, 188, 100);}
 
 .slideshow {
@@ -41,20 +39,21 @@ nav a:hover {color: rgb(247, 188, 100);}
 
 main {
     padding: 0px 0px 66px 0px;
-    background-color: rgb(199, 205, 207);
+    background-color: #FFFFFF;
     color: #2b1d0e;
 }
 
 h2 {
-    background-color: white;
+    background-color: #FFFFFF;
     font-size: 30px;
     text-align: center;
-    /* border-top: 2px solid rgb(199, 205, 207); */
     margin-top: 0;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
     padding-top: 40px;
     padding-bottom: 40px;
-
+    border: 1px solid #495464;
+    border-right: none;
+    border-left: none;
 }
 
 .shoetable td {
@@ -89,7 +88,7 @@ h2 {
 
 .flex-row-item1 {
     flex: 30%;
-    background-color: #FFFFFF;
+    background-color: #E8E8E8;
     padding-left: 15px;
     padding-right: 15px;
     height: 175px;
@@ -97,7 +96,7 @@ h2 {
 }
 .flex-row-item2 {
     flex: 25%;
-    background-color: #FFFFFF;
+    background-color: #E8E8E8;
     padding-left: 15px;
     padding-right: 15px;
     height: 175px;
@@ -105,7 +104,7 @@ h2 {
 }
 .flex-row-item3 {
     flex: 35%;
-    background-color: #FFFFFF;
+    background-color: #E8E8E8;
     padding-left: 15px;
     padding-right: 15px;
     height: 175px;
@@ -205,10 +204,9 @@ body {
 }
 
 footer {
-    background-color: #FFFFFF;
+    background-color: #E8E8E8;
     font-size: 11px;
     font-style: italic;
-    /* text-align: center; */
     padding-top: 10px;
     padding-bottom: 10px;
     margin-bottom: 20px;
@@ -221,7 +219,7 @@ footer {
 head, footer, #wrapper {
     margin-left: 40px;
     margin-right: 40px;
-    box-shadow: 5px 5px 8px black;
+    box-shadow: 0px 2px 5px #BBBFCA;
     color: #000000;
 }
 
