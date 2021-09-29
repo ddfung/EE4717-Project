@@ -20,6 +20,9 @@ nav {
     font-size: 18px;
     padding-top: 10px;
     padding-bottom: 10px;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+
 }
 
 nav a {
@@ -37,7 +40,7 @@ nav a:hover {color: rgb(247, 188, 100);}
 }
 
 main {
-    padding: 10px 10px 66px 14px;
+    padding: 0px 0px 66px 0px;
     background-color: rgb(199, 205, 207);
     color: #2b1d0e;
 }
@@ -45,10 +48,13 @@ main {
 h2 {
     background-color: white;
     font-size: 30px;
-    color: black;
     text-align: center;
-    border-style: solid;
-    border-width: 2px;
+    /* border-top: 2px solid rgb(199, 205, 207); */
+    margin-top: 0;
+    margin-bottom: 30px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+
 }
 
 .shoetable td {
