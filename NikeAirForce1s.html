@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body>      
 <div id="wrapper">
     <header>   
         <h1>DAMES.</h1>
@@ -29,8 +29,8 @@
               </div>
               <div class="productpage-column">
                 <div class="productpage-column-right">
-                  <h4>Adidas Stan Smiths</h4>
-                  <p>The radiance lives on in the Nike Air Force 1 ’07,
+                  <h4 class="product-title">NIKE AIR FORCE 1 LOW</h4>
+                  <p class="product-description">The radiance lives on in the Nike Air Force 1 ’07,
                      the b-ball icon that celebrates 50 years of the Swoosh.
                      Keeping what you know best: stitched overlays, bold colors
                      and the perfect amount of flash to make you shine, 
@@ -43,7 +43,21 @@
                         <button>US 7</button>
                         <button>US 8</button>
                         <button>US 9</button>                     
-                    </div>                     
+                    </div><br>
+                    <!-- Trigger/Open The Modal -->
+                    <button id="myBtn">Add to Cart</button>
+
+                    <!-- The Modal -->
+                    <div id="myModal" class="modal">
+
+                    <!-- Modal content -->
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <p>Item has been added to Cart.</p>
+                    </div>
+                    </div>
+                    <script type = "text/javascript"  src = "modal cart.js" >
+                    </script>                                       
                 </div>                 
             </div>
           </div>                         
