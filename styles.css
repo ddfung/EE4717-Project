@@ -78,6 +78,89 @@ h2 {
     height: 160px;
 }
 
+#productshoe {
+    margin-left: auto;
+    margin-right: auto;
+    width:50%;
+    width: 285px;
+    height: 260px;
+    justify-content: center;
+    align-self: center;
+}
+
+.product-color{
+    font-family: Helvetica, sans-serif;
+    font-size:16px ;
+}
+
+.product-price{
+    font-family: Helvetica, sans-serif;
+    font-size: 50px;
+}
+
+.productpage-wrapper{
+    background: #aaa;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.productpage-row{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.productpage-column{
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    flex: 1;
+    width: 100%;
+}
+
+.productpage-column-left {
+    display: flex;
+    flex: auto;
+    background-color: #FFFFFF;
+    height: auto;
+    width: auto;
+}
+
+.productpage-column-right {
+    flex: auto;
+    background-color: #FFFFFF;
+    padding-left: 30px;
+    padding-right: 30px;
+    height: auto;
+    width: auto;
+}
+
+.btn-group button {
+    background-color: #BBBFCA; /* Green background */
+    border: 1px solid #495464; /* Green border */
+    color: black; /* White text */
+    padding: 10px 24px; /* Some padding */
+    cursor: pointer; /* Pointer/hand icon */
+    float: left; /* Float the buttons side by side */
+  }
+  
+  .btn-group button:not(:last-child) {
+    border-right: none; /* Prevent double borders */
+  }
+  
+  /* Clear floats (clearfix hack) */
+  .btn-group:after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  
+  /* Add a background color on hover */
+  .btn-group button:hover {
+    background-color: #aaa;
+  }
+
 .flex-row-container {
     background: #aaa;
     display: flex;
