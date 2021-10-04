@@ -22,13 +22,54 @@
     </nav>
     <main>
         <h2>SHOPPING CART</h2>
-          <div class="productpage-row">
-                <div class="productpage-column-left">
-                    
-                </div>                 
-                <div class="productpage-column-right">                                 
-                </div>                 
-          </div>                         
+        <div id="cartWrapper">
+            <table class="cartTable">
+                <tr>
+                    <td></td>
+                    <th>ITEM</th>
+                    <th>SIZE</th>
+                    <th>QTY</th>
+                    <th>PRICE</th>
+                </tr>
+                <tr>
+                    <td><img id="shoe" src="assets/slideshowImage/slideshow1.png"></td>
+                    <td>Nike Air Force 1</td> 
+                    <td>US 9</td>
+                    <td><div class="quantity buttons_added">
+                        <input 
+                            type="number" 
+                            step="1" 
+                            min="0" 
+                            value="1" 
+                            title="Qty" 
+                            size="3">
+                    </div></td>
+                    <td>$150</td>
+                    <td><img id="delete" src="assets/shoppingBag/trash.png"></td>
+                </tr>
+                <tr>
+                    <td><img id="shoe" src="assets/slideshowImage/slideshow2.png"></td>
+                    <td>Adidas Stan Smith</td> 
+                    <td>US 9</td>
+                    <td><div class="quantity buttons_added">
+                        <input 
+                            type="number" 
+                            step="1" 
+                            min="0" 
+                            value="1" 
+                            title="Qty" 
+                            size="3">
+                    </div></td>
+                    <td>$140</td>
+                    <td><img id="delete" src="assets/shoppingBag/trash.png"></td>
+                </tr>
+          </table>
+        </div>
+        <hr class="solid"><br>            
+        <span class="cartTotal">SUBTOTAL: $290</span><br><br><br><br>
+        <button id="checkoutBtn">CHECKOUT</button>
+        <button id="backBtn">BACK TO SHOPPING</button>
+
     </main>
 </div>
 </body>

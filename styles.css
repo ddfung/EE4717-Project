@@ -252,6 +252,68 @@ h2 {
     cursor: pointer;
 }
 
+/* ------------- SHOPPING BAG ------------- */
+#cartWrapper {
+    padding-left: 20px;
+    padding-right: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.cartTable {
+    padding-bottom: 10px;
+    width: 90%;
+}
+
+.cartTable th {
+    justify-content: start;
+    text-align: start;
+    font-size: 18px;
+}
+
+.cartTable td {
+    justify-content: start;
+    text-align: start;
+    font-size: 16px;
+}
+
+#delete {
+    width: 25px;
+}
+
+hr.solid {
+    border-top: 1px solid #000000;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.cartTotal {
+    float: right;
+    font-size: 18px;
+    font-weight: bold;
+    padding-right: 125px;
+}
+
+#checkoutBtn {
+    background-color: #495464;
+    padding: 10px;
+    font-size: 15px;
+    border-radius: 3px;
+    color: #FFFFFF;
+    float: right;
+    margin-right: 75px;
+}
+
+#backBtn {
+    background-color: #495464;
+    padding: 10px;
+    font-size: 15px;
+    border-radius: 3px;
+    color: #FFFFFF;
+    float: right;
+    margin-right: 40px;
+}
+
 /* ------------- LOCATION ------------- */
 #shopfront {
     padding-bottom: 10px;
