@@ -85,7 +85,44 @@ h2 {
     height: 160px;
 }
 
-/* PRODUCT PAGE */
+/* ---------- FOOTER ------------ */
+.flex-row-container {
+    background: #aaa;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.flex-row-item1 {
+    flex: 30%;
+    background-color: #E8E8E8;
+    padding-left: 15px;
+    padding-right: 15px;
+    height: 175px;
+
+}
+.flex-row-item2 {
+    flex: 25%;
+    background-color: #E8E8E8;
+    padding-left: 15px;
+    padding-right: 15px;
+    height: 175px;
+
+}
+.flex-row-item3 {
+    flex: 35%;
+    background-color: #E8E8E8;
+    padding-left: 15px;
+    padding-right: 15px;
+    height: 175px;
+}
+
+#paymentImage {
+    width: 100%;
+}
+
+/* ----------- PRODUCT PAGE ------------ */
 #productshoe {
     margin-left: auto;
     margin-right: auto;
@@ -208,50 +245,14 @@ h2 {
     font-weight: bold;
 }
   
-  .close:hover,
-  .close:focus {
+.close:hover,
+.close:focus {
     color: #000;
     text-decoration: none;
     cursor: pointer;
-  }
-
-.flex-row-container {
-    background: #aaa;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
 }
 
-.flex-row-item1 {
-    flex: 30%;
-    background-color: #E8E8E8;
-    padding-left: 15px;
-    padding-right: 15px;
-    height: 175px;
-
-}
-.flex-row-item2 {
-    flex: 25%;
-    background-color: #E8E8E8;
-    padding-left: 15px;
-    padding-right: 15px;
-    height: 175px;
-
-}
-.flex-row-item3 {
-    flex: 35%;
-    background-color: #E8E8E8;
-    padding-left: 15px;
-    padding-right: 15px;
-    height: 175px;
-}
-
-#paymentImage {
-    width: 100%;
-}
-
-/* LOCATION */
+/* ------------- LOCATION ------------- */
 #shopfront {
     padding-bottom: 10px;
     padding-top: 15px;
@@ -262,6 +263,7 @@ h2 {
 #map {
     height: 220px;
     width: 370px;
+    padding-right: 20px;
 }
 
 .locationTable th {
@@ -335,7 +337,6 @@ body {
     background-color: #FFFFFF;
     font-size: 13px;
     width: 1000px;
-    color: #3B230B;
     font-family: Helvetica;
 
 }
@@ -358,8 +359,4 @@ head, footer, #wrapper {
     margin-right: 40px;
     box-shadow: 0px 2px 5px #BBBFCA;
     color: #000000;
-}
-
-.contact a {
-    color: #3B230B;
 }
