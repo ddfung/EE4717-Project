@@ -21,6 +21,7 @@ nav {
     font-size: 18px;
     padding-top: 10px;
     padding-bottom: 10px;
+    padding-left: 90px;
 }
 
 nav a {
@@ -35,6 +36,12 @@ nav a:hover {color: rgb(247, 188, 100);}
 .slideshow {
     justify-content: center;
     display: flex;
+}
+
+#shoppingBag {
+    width: 2%;
+    float: right;
+    padding-right:30px
 }
 
 main {
