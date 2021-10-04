@@ -85,34 +85,30 @@ h2 {
     height: 160px;
 }
 
+/* PRODUCT PAGE */
 #productshoe {
     margin-left: auto;
     margin-right: auto;
-    width:50%;
-    width: 285px;
-    height: 260px;
+    width: 350px;
     justify-content: center;
     align-self: center;
 }
 
 .product-color{
-    font-family: Helvetica, sans-serif;
-    font-size:12px ;
+    font-size: 20px;
+    font-weight: bold;
 }
 
 .product-price{
-    font-family: Helvetica, sans-serif;
     font-size: 30px;
     color: grey;
 }
 
 .product-title{
-    font-family: Helvetica, Arial, sans-serif;
     font-size: 30px;
 }
 
 .product-description{
-    font-family: Helvetica, Arial, sans-serif;
     font-size: 15px;
 }
 
@@ -124,60 +120,61 @@ h2 {
 
 .productpage-row{
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
-    width: 100%;
-}
-
-.productpage-column{
-    display: flex;
-    flex-direction: column;
-    flex-basis: 100%;
-    flex: 1;
-    width: 100%;
+    /* align-items: center; */
+    justify-content: center;
 }
 
 .productpage-column-left {
-    display: flex;
-    flex: auto;
+    flex: 40%; 
     background-color: #FFFFFF;
+    padding-left: 30px;
+    padding-right: 15px;
     height: auto;
     width: auto;
 }
 
 .productpage-column-right {
-    flex: auto;
+    flex: 50%;
     background-color: #FFFFFF;
-    padding-left: 30px;
+    padding-left: 15px;
     padding-right: 30px;
     height: auto;
     width: auto;
 }
 
+#myBtn {
+    background-color: #495464;
+    padding: 10px;
+    font-size: 15px;
+    border-radius: 3px;
+    color: #FFFFFF;
+}
+
 .btn-group button {
-    background-color: #BBBFCA; /* Green background */
+    background-color: #E8E8E8; /* Green background */
     border: 1px solid #495464; /* Green border */
     color: black; /* White text */
     padding: 10px 24px; /* Some padding */
     cursor: pointer; /* Pointer/hand icon */
-    float: left; /* Float the buttons side by side */
-  }
+    float: left; /*Float the buttons side by side*/
+}
   
-  .btn-group button:not(:last-child) {
+.btn-group button:not(:last-child) {
     border-right: none; /* Prevent double borders */
-  }
+}
   
   /* Clear floats (clearfix hack) */
-  .btn-group:after {
+.btn-group:after {
     content: "";
     clear: both;
     display: table;
-  }
-  
-  /* Add a background color on hover */
-  .btn-group button:hover {
+}
+
+/* Add a background color on hover */
+.btn-group button:hover {
     background-color: #aaa;
-  }
+}
 
  /* The Modal (background) */
 .modal {
@@ -192,24 +189,24 @@ h2 {
     overflow: auto; /* Enable scroll if needed */
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-  }
+}
   
   /* Modal Content */
-  .modal-content {
+.modal-content {
     background-color: #fefefe;
     margin: auto;
     padding: 20px;
     border: 1px solid #888;
     width: 80%;
-  }
+}
   
   /* The Close Button */
-  .close {
+.close {
     color: #aaaaaa;
     float: right;
     font-size: 28px;
     font-weight: bold;
-  }
+}
   
   .close:hover,
   .close:focus {
@@ -339,7 +336,7 @@ body {
     font-size: 13px;
     width: 1000px;
     color: #3B230B;
-    font-family: Verdana, Arial, sans-serif;
+    font-family: Helvetica;
 
 }
 
