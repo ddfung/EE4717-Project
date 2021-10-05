@@ -1,424 +1,639 @@
 header {
-    background-color: #BBBFCA;
-    height: 130px;
-    display: flex;
-    justify-content: center;
-    border: 1px solid #495464;
-    border-right: none;
-    border-left: none;
+  background-color: #bbbfca;
+  height: 130px;
+  display: flex;
+  justify-content: center;
+  border: 1px solid #495464;
+  border-right: none;
+  border-left: none;
 }
 
 h1 {
-    font-size: 50px;
-    color: #000000;
-    text-align: center;
+  font-size: 50px;
+  color: #000000;
+  text-align: center;
 }
 
-nav {   
-    background-color: #E8E8E8;
-    font-weight: bold;
-    text-align: center;
-    font-size: 18px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 90px;
+nav {
+  background-color: #e8e8e8;
+  font-weight: bold;
+  text-align: center;
+  font-size: 18px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  /* justify-content: center; */
 }
 
 nav a {
-    text-decoration: none;
-    padding-left: 20px;
-    padding-right: 20px;
+  text-decoration: none;
+  padding-left: 20px;
+  padding-right: 20px;
 }
-nav a:link {color: #000000;}
-nav a:visited {color: #000000;}
-nav a:hover {color: rgb(247, 188, 100);}
+nav a:link {
+  color: #000000;
+}
+nav a:visited {
+  color: #000000;
+}
+nav a:hover {
+  color: rgb(247, 188, 100);
+}
 
-.slideshow {
+/* .slideshow {
     justify-content: center;
     display: flex;
-}
+} */
 
 #shoppingBag {
-    width: 2%;
-    float: right;
-    padding-right:30px
+  width: 2%;
+  /* height: 20px; */
+  float: right;
+  padding-right: 30px;
 }
 
 main {
-    padding: 0px 0px 66px 0px;
-    background-color: #FFFFFF;
-    color: #2b1d0e;
+  padding: 0px 0px 66px 0px;
+  background-color: #ffffff;
+  color: #2b1d0e;
 }
 
 h2 {
-    background-color: #FFFFFF;
-    font-size: 30px;
-    text-align: center;
-    margin-top: 0;
-    margin-bottom: 40px;
-    padding-top: 40px;
-    padding-bottom: 40px;
-    border: 1px solid #495464;
-    border-right: none;
-    border-left: none;
+  background-color: #ffffff;
+  font-size: 30px;
+  text-align: center;
+  margin-top: 0px;
+  margin-bottom: 40px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  border: 1px solid #495464;
+  border-right: none;
+  border-left: none;
+  border-top: none;
+}
+
+.shoetable {
+  width: 100%;
+  padding: 20px;
 }
 
 .shoetable td {
-    padding-top: 10px;
-    /* padding-bottom: 10px; */
-    padding-left: 10px;
-    padding-right: 10px;
+  padding: 4px 10px;
 }
 
 .shoetable tr:nth-of-type(odd) {
-    text-align: center;
-    width: 100%;
+  text-align: center;
+  width: 100%;
 }
 
 .shoetable tr:nth-of-type(even) {
-    width: 100%;
-    font-weight: bold;
+  width: 100%;
+  font-weight: bold;
 }
 
 #shoe {
-    width: 285px;
-    height: 160px;
+  width: 300px;
+  height: 300px;
+}
+
+.page-shoe-price {
+  font-family: Helvetica, Arial, sans-serif;
+  text-align: left;
+  color: #999999;
+}
+
+.page-shoe-name {
+  font-family: Helvetica, Arial, sans-serif;
+  text-align: left;
+  color: black;
+  font-weight: bold;
 }
 
 /* ---------- FOOTER ------------ */
 .flex-row-container {
-    background: #aaa;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
+  background: #aaa;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
 }
 
 .flex-row-item1 {
-    flex: 30%;
-    background-color: #E8E8E8;
-    padding-left: 15px;
-    padding-right: 15px;
-    height: 175px;
-
+  flex: 30%;
+  background-color: #e8e8e8;
+  padding-left: 15px;
+  padding-right: 15px;
+  height: 175px;
 }
 .flex-row-item2 {
-    flex: 25%;
-    background-color: #E8E8E8;
-    padding-left: 15px;
-    padding-right: 15px;
-    height: 175px;
-
+  flex: 25%;
+  background-color: #e8e8e8;
+  padding-left: 15px;
+  padding-right: 15px;
+  height: 175px;
 }
 .flex-row-item3 {
-    flex: 35%;
-    background-color: #E8E8E8;
-    padding-left: 15px;
-    padding-right: 15px;
-    height: 175px;
+  flex: 35%;
+  background-color: #e8e8e8;
+  padding-left: 15px;
+  padding-right: 15px;
+  height: 175px;
 }
 
 #paymentImage {
-    width: 100%;
+  width: 100%;
 }
 
 /* ----------- PRODUCT PAGE ------------ */
 #productshoe {
-    margin-left: auto;
-    margin-right: auto;
-    width: 350px;
-    justify-content: center;
-    align-self: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 600px;
+  justify-content: center;
+  align-self: center;
 }
 
-.product-color{
-    font-size: 20px;
-    font-weight: bold;
+.product-color {
+  font-size: 20px;
+  font-weight: bold;
+  font-family: Helvetica, Arial, sans-serif;
 }
 
-.product-price{
-    font-size: 30px;
-    color: grey;
+.product-price {
+  font-size: 30px;
+  color: grey;
+  padding: 15px 0px;
 }
 
-.product-title{
-    font-size: 30px;
+.product-title {
+  font-size: 30px;
+  margin-top: 75px;
 }
 
-.product-description{
-    font-size: 15px;
+.product-description {
+  font-size: 15px;
+  font-family: Helvetica, Arial, sans-serif;
+  padding: 20px 0px;
 }
 
-.productpage-wrapper{
-    background: #aaa;
-    display: flex;
-    flex-wrap: wrap;
+.productpage-wrapper {
+  background: #aaa;
+  display: flex;
+  flex-wrap: wrap;
 }
 
-.productpage-row{
-    display: flex;
-    flex-wrap: wrap;
-    /* align-items: center; */
-    justify-content: center;
+.productpage-row {
+  display: flex;
+  margin: 0%;
+  /* flex-wrap: wrap; */
+  /* align-items: center; */
+  /* justify-content: center; */
+  /* padding: 0px; */
 }
 
 .productpage-column-left {
-    flex: 40%; 
-    background-color: #FFFFFF;
-    padding-left: 30px;
-    padding-right: 15px;
-    height: auto;
-    width: auto;
+  flex: 50%;
+  background-color: #ffffff;
+  padding-left: 30px;
+  padding-right: 30px;
+  height: auto;
+  width: auto;
+  justify-content: center;
 }
 
 .productpage-column-right {
-    flex: 50%;
-    background-color: #FFFFFF;
-    padding-left: 15px;
-    padding-right: 30px;
-    height: auto;
-    width: auto;
+  flex: 45%;
+  background-color: #ffffff;
+  padding-left: 25px;
+  padding-right: 30px;
+  height: auto;
+  width: auto;
 }
 
 #myBtn {
-    background-color: #495464;
-    padding: 10px;
-    font-size: 15px;
-    border-radius: 3px;
-    color: #FFFFFF;
+  background-color: #495464;
+  padding: 10px;
+  font-size: 15px;
+  border-radius: 3px;
+  color: #ffffff;
 }
 
 .btn-group button {
-    background-color: #E8E8E8; /* Green background */
-    border: 1px solid #495464; /* Green border */
-    color: black; /* White text */
-    padding: 10px 24px; /* Some padding */
-    cursor: pointer; /* Pointer/hand icon */
-    float: left; /*Float the buttons side by side*/
+  background-color: #e8e8e8; /* Green background */
+  border: 1px solid #495464; /* Green border */
+  color: black; /* White text */
+  padding: 10px 24px; /* Some padding */
+  cursor: pointer; /* Pointer/hand icon */
+  float: left; /*Float the buttons side by side*/
 }
-  
+
 .btn-group button:not(:last-child) {
-    border-right: none; /* Prevent double borders */
+  border-right: none; /* Prevent double borders */
 }
-  
-  /* Clear floats (clearfix hack) */
+
+/* Clear floats (clearfix hack) */
 .btn-group:after {
-    content: "";
-    clear: both;
-    display: table;
+  content: "";
+  clear: both;
+  display: table;
 }
 
 /* Add a background color on hover */
 .btn-group button:hover {
-    background-color: #aaa;
+  background-color: #aaa;
 }
 
- /* The Modal (background) */
+/* The Modal (background) */
 .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
 }
-  
-  /* Modal Content */
+
+/* Modal Content */
 .modal-content {
-    background-color: #fefefe;
-    margin: auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
 }
-  
-  /* The Close Button */
+
+/* The Close Button */
 .close {
-    color: #aaaaaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
 }
-  
+
 .close:hover,
 .close:focus {
-    color: #000;
-    text-decoration: none;
-    cursor: pointer;
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 /* ------------- SHOPPING BAG ------------- */
 #cartWrapper {
-    padding-left: 20px;
-    padding-right: 20px;
-    display: flex;
-    justify-content: space-around;
+  padding-left: 20px;
+  padding-right: 20px;
+  display: flex;
+  justify-content: space-around;
 }
 
 .cartTable {
-    padding-bottom: 10px;
-    width: 90%;
+  padding-bottom: 10px;
+  width: 90%;
 }
 
 .cartTable th {
-    justify-content: start;
-    text-align: start;
-    font-size: 18px;
+  justify-content: start;
+  text-align: start;
+  font-size: 18px;
 }
 
 .cartTable td {
-    justify-content: start;
-    text-align: start;
-    font-size: 16px;
+  justify-content: start;
+  text-align: start;
+  font-size: 16px;
 }
 
 #delete {
-    width: 25px;
+  width: 25px;
 }
 
 hr.solid {
-    border-top: 1px solid #000000;
-    margin-left: 30px;
-    margin-right: 30px;
+  border-top: 1px solid #000000;
+  margin-left: 30px;
+  margin-right: 30px;
 }
 
 .cartTotal {
-    float: right;
-    font-size: 18px;
-    font-weight: bold;
-    padding-right: 125px;
+  float: right;
+  font-size: 18px;
+  font-weight: bold;
+  padding-right: 125px;
 }
 
 #checkoutBtn {
-    background-color: #495464;
-    padding: 10px;
-    font-size: 15px;
-    border-radius: 3px;
-    color: #FFFFFF;
-    float: right;
-    margin-right: 75px;
+  background-color: #495464;
+  padding: 10px;
+  font-size: 15px;
+  border-radius: 3px;
+  color: #ffffff;
+  float: right;
+  margin-right: 75px;
 }
 
 #backBtn {
-    background-color: #495464;
-    padding: 10px;
-    font-size: 15px;
-    border-radius: 3px;
-    color: #FFFFFF;
-    float: right;
-    margin-right: 40px;
+  background-color: #495464;
+  padding: 10px;
+  font-size: 15px;
+  border-radius: 3px;
+  color: #ffffff;
+  float: right;
+  margin-right: 40px;
 }
 
 /* ------------- LOCATION ------------- */
 #shopfront {
-    padding-bottom: 10px;
-    padding-top: 15px;
-    height: 250px;
-    width: 400px;
+  padding-bottom: 10px;
+  padding-top: 15px;
+  height: 250px;
+  width: 400px;
 }
 
 #map {
-    height: 220px;
-    width: 370px;
-    padding-right: 20px;
+  height: 220px;
+  width: 370px;
+  padding-right: 20px;
 }
 
 .locationTable th {
-    font-size: 25px;
+  font-size: 25px;
 }
 
 .locationTable td {
-    width: 70%;
-    padding-left: 20px;
+  width: 70%;
+  padding-left: 20px;
 }
 
 .month {
-    background: #d1b38e;
-    font-weight: bold;
-    font-size: large;
+  background: #d1b38e;
+  font-weight: bold;
+  font-size: large;
 }
 
 #musicTable {
-    width: 85%;
-    margin: auto;
-    border-spacing: 0px;
-    padding-left: 60px;
-    padding-right: 50px;
+  width: 85%;
+  margin: auto;
+  border-spacing: 0px;
+  padding-left: 60px;
+  padding-right: 50px;
 }
 
-#musicTable td:nth-of-type(even){
-    padding-bottom: 15px;
-    padding-left: 20px;
-    padding-right: 20px;
+#musicTable td:nth-of-type(even) {
+  padding-bottom: 15px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 #musicImage {
-    flex-grow: 1;
+  flex-grow: 1;
 }
 .musicImage img {
-    width: 80%;
-    height: 80%;
-    padding-left: 20px;
+  width: 80%;
+  height: 80%;
+  padding-left: 20px;
 }
 
 form {
-    font-family: Verdana, Arial, sans-serif;
-    width: 420px; 
-    height: 200px;
+  font-family: Verdana, Arial, sans-serif;
+  width: 420px;
+  height: 200px;
 }
 
 label {
-    /* display: inline-block; */
-    float: left;
-    clear: left;
-    width: 100px;
-    text-align: right;
-    margin-bottom: 14px;
+  /* display: inline-block; */
+  float: left;
+  clear: left;
+  width: 100px;
+  text-align: right;
+  margin-bottom: 14px;
 }
 
-input[type=text], input[type=date], input[type=email], textarea {
-    float: left;
-    margin-left: 50px;
-    /* display: inline-block; */
-    margin-bottom: 14px;
+input[type="text"],
+input[type="date"],
+input[type="email"],
+textarea {
+  float: left;
+  margin-left: 50px;
+  /* display: inline-block; */
+  margin-bottom: 14px;
 }
 
-input[type=submit], input[type=reset] {
-    margin-top: 20px;
-    margin-right: 200px;
-    float: left;
+input[type="submit"],
+input[type="reset"] {
+  margin-top: 20px;
+  margin-right: 200px;
+  float: left;
 }
 
 body {
-    margin: auto; 
-    background-color: #FFFFFF;
-    font-size: 13px;
-    width: 1000px;
-    font-family: Helvetica;
-
+  margin: auto;
+  background-color: #ffffff;
+  font-size: 13px;
+  width: 1500px;
+  font-family: Helvetica;
 }
 
 footer {
-    background-color: #E8E8E8;
-    font-size: 11px;
-    font-style: italic;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    margin-bottom: 20px;
+  background-color: #e8e8e8;
+  font-size: 11px;
+  font-style: italic;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 #wrapper {
-    background-color: #FFFFFF;
+  background-color: #ffffff;
 }
 
-head, footer, #wrapper {
-    margin-left: 40px;
-    margin-right: 40px;
-    box-shadow: 0px 2px 5px #BBBFCA;
-    color: #000000;
+head,
+footer,
+#wrapper {
+  margin-left: 40px;
+  margin-right: 40px;
+  box-shadow: 0px 2px 5px #bbbfca;
+  color: #000000;
 }
+
+* {
+  box-sizing: border-box;
+}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1600px;
+  position: relative;
+  margin: auto;
+}
+
+.productPage-slidegallery-container {
+  position: relative;
+  max-width: 650px;
+  margin:auto;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+.slider-control-bottomcenter {
+  position: absolute;
+  bottom: 0px;
+  left: 49%;
+  justify-content: center;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active,
+.dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Slideshow container */
+.productPage-slideshow-container {
+  max-width: 650px;
+  position: relative;
+  margin: auto;
+}
+
+.cursor {
+    cursor: pointer;
+  }
+  
+  /* Next & previous buttons */
+  /* .prev,
+  .next {
+    cursor: pointer;
+    position: absolute;
+    top: 40%;
+    width: auto;
+    padding: 16px;
+    margin-top: -50px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    -webkit-user-select: none;
+  } */
+    
+  /* Number text (1/3 etc) */
+  .numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+  }
+   
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Six columns side by side */
+  .column {
+    float: left;
+    width: 20%;
+  }
+  
+  /* Add a transparency effect for thumnbail images */
+  .demo {
+    opacity: 0.6;
+  }
+  
+  .active,
+  .demo:hover {
+    opacity: 1;
+  }

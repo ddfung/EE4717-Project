@@ -1,81 +1,173 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<title>SHOE SHOP</title>
-<meta charset="utf-8">
-<link rel="stylesheet" href="styles.css">
-</head>
-<body>
-<div id="wrapper">
-    <header>   
+  <head>
+    <title>SHOE SHOP</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="wrapper">
+      <header>
         <h1>DAMES.</h1>
-    </header> 
-    <nav>
-        <b> 
-            <a href="index.html">LATEST</a> 
-            <a href="men.html">MEN</a> 
-            <a href="women.html">WOMEN</a>
-            <a href="sale.html">SALE</a>
-            <a href="location.html">LOCATION</a>
-            <a href="shoppingBag.html"><img id="shoppingBag" src="assets/shoppingBag/shoppingBag.png"></a>
+      </header>
+      <nav>
+        <b>
+          <a href="index.html">LATEST</a>
+          <a href="men.html">MEN</a>
+          <a href="women.html">WOMEN</a>
+          <a href="sale.html">SALE</a>
+          <a href="location.html">LOCATION</a>
+          <a href="shoppingBag.html"
+            ><img id="shoppingBag" src="assets/shoppingBag/shoppingBag.png"
+          /></a>
         </b>
-    </nav>
-    <main>
-        <div class="slideshow">
-            <img src="assets/slideshowImage/slideshow1.png" width="50%">
+      </nav>
+      <main>
+        <!-- Slideshow container -->
+        <div class="slideshow-container">
+          <!-- Full-width images with number and caption text -->
+          <div class="mySlides fade">
+            <div class="numbertext">1 / 3</div>
+            <img
+              src="assets/frontpageSlideshow/CONVERSE_JOHN_ELLIOTT_1800x.jpg"
+              style="width: 100%"
+            />
+            <div class="text"></div>
+          </div>
+
+          <div class="mySlides fade">
+            <div class="numbertext">2 / 3</div>
+            <img
+              src="assets/frontpageSlideshow/ADIDAS_x_JAMES_BOND_1800x.jpg"
+              style="width: 100%"
+            />
+            <div class="text"></div>
+          </div>
+
+          <div class="mySlides fade">
+            <div class="numbertext">3 / 3</div>
+            <img
+              src="assets/frontpageSlideshow/NEW_BALANCE_XC-72_1800x.jpg"
+              style="width: 100%"
+            />
+            <div class="text"></div>
+          </div>
+
+          <!-- Next and previous buttons -->
+          <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+          <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+          <!-- The dots/circles -->
+          <div class="slider-control-bottomcenter" style="text-align: center">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+          </div>
         </div>
         <h2>LATEST</h2>
         <table class="shoetable">
-            <tr>
-                <td>
-                    <img id="shoe" src="assets/slideshowImage/slideshow2.png">
-                </td>
-                <td><a href="NikeAirForce1s.html"><img id="shoe" src="assets/slideshowImage/slideshow1.png">
-                </a></td> 
-                <td><img id="shoe" src="assets/slideshowImage/slideshow3.png"></td>
-            </tr>
-            <tr>
-                <td>$150 <br> Adidas Stan Smith</td>
-                <td>$149 <br> Nike Air Force 1</td> 
-                <td>$235 <br> Adidas Ultra Boost 5.0 DNA</td>
-            </tr>
-            <tr>
-                <td><img id="shoe" src="assets/slideshowImage/slideshow2.png"></td>
-                <td><img id="shoe" src="assets/slideshowImage/slideshow1.png"></td> 
-                <td><img id="shoe" src="assets/slideshowImage/slideshow3.png"></td>
-            </tr>
-            <tr>
-                <td>$140 <br> Adidas Stan Smith</td>
-                <td>$149 <br> Nike Air Force 1</td> 
-                <td>$235 <br> Adidas Ultra Boost 5.0 DNA</td>
-              </tr>
-          </table>
-    </main>
-</div>
-</body>
-<footer>
+          <tr>
+            <td>
+              <img id="shoe" src="assets/slideshowImage/slideshow2.png" />
+            </td>
+            <td>
+              <a href="nikeairforce1_07_LV8.html"
+                ><img id="shoe" src="assets/slideshowImage/slideshow1.png" />
+              </a>
+            </td>
+            <td>
+              <a href="nikeairforce1_07_LV8.html">
+                <img
+                  id="shoe"
+                  src="assets/nikeAirForce1 07 LV8/nikeAirForce1_07_LV8_Diagonal.png"
+                />
+              </a>
+            </td>
+            <td>
+              <a href="garconsConverse.html"
+                ><img
+                  id="shoe"
+                  src="assets/garconsConverse/garconsConverseDiagonal.png"
+                />
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td class="page-shoe-price">$150</td>
+            <td class="page-shoe-price">$150</td>
+            <td class="page-shoe-price">$159</td>
+            <td class="page-shoe-price">$215</td>
+          </tr>
+          <tr>
+            <td class="page-shoe-name">
+              COMME DES GARCONS PLAY X CONVERSE CHUCK TAYLOR 1970S HI
+            </td>
+            <td class="page-shoe-name">
+              COMME DES GARCONS PLAY X CONVERSE CHUCK TAYLOR 1970S HI
+            </td>
+            <td class="page-shoe-name">NIKE AIR FORCE 1 07 LV8 M2Z2</td>
+            <td class="page-shoe-name">
+              COMME DES GARCONS PLAY X CONVERSE CHUCK TAYLOR 1970S HI
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <img id="shoe" src="assets/slideshowImage/slideshow2.png" />
+            </td>
+            <td>
+              <img id="shoe" src="assets/slideshowImage/slideshow1.png" />
+            </td>
+            <td>
+              <img id="shoe" src="assets/slideshowImage/slideshow3.png" />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              $140 <br />
+              Adidas Stan Smith
+            </td>
+            <td>
+              $149 <br />
+              Nike Air Force 1
+            </td>
+            <td>
+              $235 <br />
+              Adidas Ultra Boost 5.0 DNA
+            </td>
+          </tr>
+        </table>
+      </main>
+    </div>
+  </body>
+  <script type="text/javascript" src="frontpageSlideshow.js"></script>
+  <footer>
     <div class="flex-row-container">
-        <div class="flex-row-item1">
-            <h3>About Us</h3><br>
-            Here at DAMES., we realize that style and 
-            prosperity begin with the correct shoes. We likewise 
-            understand that effectively finding the size and style to 
-            meet your requirements is vital to your web based shopping 
-            knowledge. Since beginning our web based business website in 
-            2009, we’ve been endeavoring to present to you that perfect 
-            shopping experience.
-        </div>
-        <div class="flex-row-item2">
-            <h3>Customer Service</h3><br>
-            Tel: +65 6888 8888<br><br>
-            Email: <a href="mailto:cakeshop4717@f34.com">Dames.4717@gmail.com</a><br><br>
-            <u>Track Your Order</u>
-        </div>
-        <div class="flex-row-item3">
-            <h3></h3><br>
-            <img id="paymentImage" src="assets/footer/Six accepted payment icons.png"><br>
-            Copyright &copy; 2021 DAMES.
-        </div>
-     </div>
-</footer>
+      <div class="flex-row-item1">
+        <h3>About Us</h3>
+        <br />
+        Here at DAMES., we realize that style and prosperity begin with the
+        correct shoes. We likewise understand that effectively finding the size
+        and style to meet your requirements is vital to your web based shopping
+        knowledge. Since beginning our web based business website in 2009, we’ve
+        been endeavoring to present to you that perfect shopping experience.
+      </div>
+      <div class="flex-row-item2">
+        <h3>Customer Service</h3>
+        <br />
+        Tel: +65 6888 8888<br /><br />
+        Email: <a href="mailto:cakeshop4717@f34.com">Dames.4717@gmail.com</a
+        ><br /><br />
+        <u>Track Your Order</u>
+      </div>
+      <div class="flex-row-item3">
+        <h3></h3>
+        <br />
+        <img
+          id="paymentImage"
+          src="assets/footer/Six accepted payment icons.png"
+        /><br />
+        Copyright &copy; 2021 DAMES.
+      </div>
+    </div>
+  </footer>
 </html>
