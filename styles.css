@@ -62,18 +62,19 @@ h2 {
   font-size: 30px;
   text-align: center;
   margin-top: 0px;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
   padding-top: 40px;
   padding-bottom: 40px;
   border: 1px solid #495464;
   border-right: none;
   border-left: none;
   border-top: none;
+  font-family: Helvetica,arial,sans-serif;
 }
 
 .shoetable {
   width: 100%;
-  padding: 20px;
+  padding: 20px 15px 20px 35px;
 }
 
 .shoetable td {
