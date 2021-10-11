@@ -21,13 +21,30 @@ nav {
   font-size: 18px;
   padding-top: 10px;
   padding-bottom: 10px;
-  /* justify-content: center; */
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  display: flex;
 }
 
-nav a {
+.navbar-center {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.nav-icon {
+  flex: 1;
+}
+
+.nav-list {
+  flex: 10;
+  justify-content: space-between;
+}
+.nav-list a {
   text-decoration: none;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 nav a:link {
   color: #000000;
@@ -39,16 +56,8 @@ nav a:hover {
   color: rgb(247, 188, 100);
 }
 
-/* .slideshow {
-    justify-content: center;
-    display: flex;
-} */
-
 #shoppingBag {
-  width: 2%;
-  /* height: 20px; */
-  float: right;
-  padding-right: 30px;
+  width: 25%;
 }
 
 main {
@@ -69,7 +78,7 @@ h2 {
   border-right: none;
   border-left: none;
   border-top: none;
-  font-family: Helvetica,arial,sans-serif;
+  font-family: Helvetica, arial, sans-serif;
 }
 
 .shoetable {
@@ -472,14 +481,13 @@ footer,
 .productPage-slidegallery-container {
   position: relative;
   max-width: 650px;
-  margin:auto;
+  margin: auto;
 }
 
 /* Hide the images by default */
 .mySlides {
   display: none;
 }
-
 
 /* Next & previous buttons */
 .prev,
@@ -588,11 +596,11 @@ footer,
 }
 
 .cursor {
-    cursor: pointer;
-  }
-  
-  /* Next & previous buttons */
-  /* .prev,
+  cursor: pointer;
+}
+
+/* Next & previous buttons */
+/* .prev,
   .next {
     cursor: pointer;
     position: absolute;
@@ -607,34 +615,34 @@ footer,
     user-select: none;
     -webkit-user-select: none;
   } */
-    
-  /* Number text (1/3 etc) */
-  .numbertext {
-    color: #f2f2f2;
-    font-size: 12px;
-    padding: 8px 12px;
-    position: absolute;
-    top: 0;
-  }
-   
-  .row:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-  
-  /* Six columns side by side */
-  .column {
-    float: left;
-    width: 20%;
-  }
-  
-  /* Add a transparency effect for thumnbail images */
-  .demo {
-    opacity: 0.6;
-  }
-  
-  .active,
-  .demo:hover {
-    opacity: 1;
-  }
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Six columns side by side */
+.column {
+  float: left;
+  width: 20%;
+}
+
+/* Add a transparency effect for thumnbail images */
+.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
