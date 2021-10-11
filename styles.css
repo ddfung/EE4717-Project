@@ -24,7 +24,7 @@ nav {
   position: sticky;
   top: 0;
   z-index: 1;
-  display: flex;
+  width: 100%;
 }
 
 .navbar-center {
@@ -34,17 +34,17 @@ nav {
 }
 
 .nav-icon {
-  flex: 1;
+  flex: 10%;
 }
 
 .nav-list {
-  flex: 10;
+  flex: 80%;
   justify-content: space-between;
 }
 .nav-list a {
   text-decoration: none;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 2.5%;
+  padding-right: 2.5%;
 }
 nav a:link {
   color: #000000;
@@ -57,7 +57,7 @@ nav a:hover {
 }
 
 #shoppingBag {
-  width: 25%;
+  width: 18px;
 }
 
 main {
@@ -445,6 +445,7 @@ body {
   font-size: 13px;
   width: 90%;
   font-family: Helvetica;
+  min-width: 800px;
 }
 
 footer {
