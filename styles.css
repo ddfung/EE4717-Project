@@ -83,7 +83,7 @@ h2 {
 
 .shoetable {
   width: 100%;
-  padding: 20px 15px 20px 35px;
+  padding: 20px 5px 20px 5px;
 }
 
 .shoetable td {
@@ -93,6 +93,7 @@ h2 {
 .shoetable tr:nth-of-type(odd) {
   text-align: center;
   width: 100%;
+  font-weight: bold;
 }
 
 .shoetable tr:nth-of-type(even) {
@@ -109,6 +110,7 @@ h2 {
   font-family: Helvetica, Arial, sans-serif;
   text-align: left;
   color: #999999;
+  font-size: 16px;
 }
 
 .page-shoe-name {
