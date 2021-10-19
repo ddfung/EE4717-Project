@@ -30,33 +30,13 @@
         </b>
       </nav>
     <main>
-        <h2>LOCATION</h2>
-        <table class="locationTable">
-            <tr>
-               <th colspan="2"> ORCHARD CENTRAL </th>
-            </tr>
-            <tr>
-               <td><img id="shopfront" src="assets/mapLocation/orchardCentralStore.jpg"></td>
-               <td><img id="map" src="assets/mapLocation/orchardCentralMap.png"></td>
-            </tr>
-            <tr>
-               <td style="font-size:16px;">181 Orchard Rd<br>
-               #03-01 Orchard Central<br>Singapore 238896<br><br><br></td>
-               <td></td>
-            </tr>
-            <tr>
-                <th colspan="2"> SUNTEC CITY </th>
-            </tr>
-            <tr>
-               <td><img id="shopfront" src="assets/mapLocation/suntecCityStore.jpg"></td>
-               <td><img id="map" src="assets/mapLocation/suntecCityMap.png"></td>
-            </tr>
-            <tr>
-               <td style="font-size:16px;">3 Temasek Boulevard<br>
-                #01-01 Suntec City<br>Singapore 038983<br></td>
-               <td></td>
-            </tr>
-        </table>
+        <h2>WOMEN</h2>
+        <div class="cardLayout">
+            <?php
+              $category='women';
+              include 'shoeCard.php';
+            ?>
+          </div>
     </main>
 </div>
 </body>

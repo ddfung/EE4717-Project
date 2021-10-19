@@ -15,10 +15,10 @@
           <div class="navbar-center">
             <span class="nav-icon"> </span>
             <span class="nav-list">
-              <a href="index.html">LATEST</a>
-              <a href="men.html">MEN</a>
-              <a href="women.html">WOMEN</a>
-              <a href="sale.html">SALE</a>
+              <a href="index.php">LATEST</a>
+              <a href="men.php">MEN</a>
+              <a href="women.php">WOMEN</a>
+              <a href="myOrders.php">MY ORDERS</a>
               <a href="location.html">LOCATION</a>
             </span>
             <span class="nav-icon">
@@ -35,7 +35,7 @@
           <!-- Full-width images with number and caption text -->
           <div class="mySlides fade">
             <div class="numbertext">1 / 3</div>
-            <a href="converseJohnElliot.html">
+            <a href="productPage.php?id='1'">
               <img
                 src="assets/frontpageSlideshow/CONVERSE_JOHN_ELLIOTT_1800x.jpg"
                 style="width: 100%"
@@ -46,7 +46,7 @@
 
           <div class="mySlides fade">
             <div class="numbertext">2 / 3</div>
-            <a href="adidasJamesBondUB20.html">
+            <a href="productPage.php?id='2'">
               <img
                 src="assets/frontpageSlideshow/ADIDAS_x_JAMES_BOND_1800x.jpg"
                 style="width: 100%"
@@ -76,98 +76,11 @@
           </div>
         </div>
         <h2>LATEST</h2>
-        <table class="shoetable">
-          <tr>
-            <td>
-              <a href="converseJohnElliot.html">
-                <img id="shoe" src="assets/mainPages/converseJohnElliot.PNG" />
-              </a>
-            </td>
-            <td>
-              <a href="adidasJamesBondUB20.html"
-                ><img
-                  id="shoe"
-                  src="assets/mainPages/adidasJamesBondUB20_diagonal.PNG"
-                />
-              </a>
-            </td>
-            <td>
-              <a href="nikeairforce1_07_LV8.html">
-                <img
-                  id="shoe"
-                  src="assets/mainPages/nikeairforce1_07_LV8_Diagonal.png"
-                />
-              </a>
-            </td>
-            <td>
-              <a href="garconsConverse.html"
-                ><img
-                  id="shoe"
-                  src="assets/mainPages/garconsConverse_Diagonal.png"
-                />
-              </a>
-            </td>
-          </tr>
-          <tr>
-            <td class="page-shoe-price">$185</td>
-            <td class="page-shoe-price">$295</td>
-            <td class="page-shoe-price">$159</td>
-            <td class="page-shoe-price">$215</td>
-          </tr>
-          <tr>
-            <td class="page-shoe-name">CONVERSE X JOHN ELLIOTT SKID GRIP OX</td>
-            <td class="page-shoe-name">ADIDAS X JAMES BOND ULTRABOOST 20</td>
-            <td class="page-shoe-name">NIKE AIR FORCE 1 07 LV8 M2Z2</td>
-            <td class="page-shoe-name">
-              COMME DES GARCONS PLAY X CONVERSE CHUCK TAYLOR 1970S HI
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <a href="converseJohnElliot.html">
-                <img id="shoe" src="assets/mainPages/converseJohnElliot.PNG" />
-              </a>
-            </td>
-            <td>
-              <a href="adidasJamesBondUB20.html"
-                ><img
-                  id="shoe"
-                  src="assets/mainPages/adidasJamesBondUB20_diagonal.PNG"
-                />
-              </a>
-            </td>
-            <td>
-              <a href="nikeairforce1_07_LV8.html">
-                <img
-                  id="shoe"
-                  src="assets/mainPages/nikeairforce1_07_LV8_Diagonal.png"
-                />
-              </a>
-            </td>
-            <td>
-              <a href="garconsConverse.html"
-                ><img
-                  id="shoe"
-                  src="assets/mainPages/garconsConverse_Diagonal.png"
-                />
-              </a>
-            </td>
-          </tr>
-          <tr>
-            <td class="page-shoe-price">$185</td>
-            <td class="page-shoe-price">$295</td>
-            <td class="page-shoe-price">$159</td>
-            <td class="page-shoe-price">$215</td>
-          </tr>
-          <tr>
-            <td class="page-shoe-name">CONVERSE X JOHN ELLIOTT SKID GRIP OX</td>
-            <td class="page-shoe-name">ADIDAS X JAMES BOND ULTRABOOST 20</td>
-            <td class="page-shoe-name">NIKE AIR FORCE 1 07 LV8 M2Z2</td>
-            <td class="page-shoe-name">
-              COMME DES GARCONS PLAY X CONVERSE CHUCK TAYLOR 1970S HI
-            </td>
-          </tr>
-        </table>
+        <div class="cardLayout">
+        <?php
+          include 'shoeCard.php';
+        ?>
+        </div>
       </main>
     </div>
   </body>

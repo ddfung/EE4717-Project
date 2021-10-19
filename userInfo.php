@@ -15,10 +15,10 @@
           <div class="navbar-center">
             <span class="nav-icon"> </span>
             <span class="nav-list">
-              <a href="index.html">LATEST</a>
-              <a href="men.html">MEN</a>
-              <a href="women.html">WOMEN</a>
-              <a href="sale.html">SALE</a>
+              <a href="index.php">LATEST</a>
+              <a href="men.php">MEN</a>
+              <a href="women.php">WOMEN</a>
+              <a href="myOrders.php">MY ORDERS</a>
               <a href="location.html">LOCATION</a>
             </span>
             <span class="nav-icon">
@@ -30,29 +30,52 @@
         </b>
       </nav>
     <main>
-        <h2>SALE</h2>
-        <table class="shoetable">
-            <tr>
-                <td><img id="shoe" src="assets/slideshowImage/slideshow2.png"></td>
-                <td><img id="shoe" src="assets/slideshowImage/slideshow1.png"></td> 
-                <td><img id="shoe" src="assets/slideshowImage/slideshow2.png"></td>
-            </tr>
-            <tr>
-                <td>$140 <br> Adidas Stan Smith</td>
-                <td>$149 <br> Nike Air Force 1</td> 
-                <td>$140 <br> Adidas Stan Smith</td>
-            </tr>
-            <tr>
-                <td><img id="shoe" src="assets/slideshowImage/slideshow2.png"></td>
-                <td><img id="shoe" src="assets/slideshowImage/slideshow1.png"></td> 
-                <td><img id="shoe" src="assets/slideshowImage/slideshow2.png"></td>
-            </tr>
-            <tr>
-                <td>$140 <br> Adidas Stan Smith</td>
-                <td>$149 <br> Nike Air Force 1</td> 
-                <td>$140 <br> Adidas Stan Smith</td>
-              </tr>
-          </table>
+        <h2>MY ORDERS</h2>
+        <form class="jobSignUp" action="show_get.php" method="GET">
+          <div>
+            <label>*Name:</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Enter your name here"
+              onchange="validateName()"
+              required
+            />
+          </div>
+          <div>
+            <label>*E-mail:</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Enter your Email-ID here"
+              onchange="validateEmail()"
+              required
+            />
+          </div>
+          <div>
+            <label>Start Date:</label>
+            <input type="date" id="startDate" name="startDate" />
+          </div>
+          <div>
+            <label style="vertical-align: top" ;>*Experience:</label>
+            <textarea
+              name="experience"
+              rows="4"
+              cols="40"
+              placeholder="Enter your past experience here"
+              required
+            ></textarea>
+          </div>
+          <div>
+            <input type="reset" id="" name="clear" value="Clear" />
+          </div>
+          <br />
+          <div>
+            <input type="submit" id="" name="submit" value="Apply Now" />
+          </div>
+        </form>
     </main>
 </div>
 </body>

@@ -15,10 +15,10 @@
           <div class="navbar-center">
             <span class="nav-icon"> </span>
             <span class="nav-list">
-              <a href="index.html">LATEST</a>
-              <a href="men.html">MEN</a>
-              <a href="women.html">WOMEN</a>
-              <a href="sale.html">SALE</a>
+              <a href="index.php">LATEST</a>
+              <a href="men.php">MEN</a>
+              <a href="women.php">WOMEN</a>
+              <a href="myOrders.php">MY ORDERS</a>
               <a href="location.html">LOCATION</a>
             </span>
             <span class="nav-icon">
@@ -30,29 +30,13 @@
         </b>
       </nav>
     <main>
-        <h2>WOMEN</h2>
-        <table class="shoetable">
-            <tr>
-                <td><img id="shoe" src="assets/slideshowImage/slideshow2.png"></td>
-                <td><img id="shoe" src="assets/slideshowImage/slideshow1.png"></td> 
-                <td><img id="shoe" src="assets/slideshowImage/slideshow2.png"></td>
-            </tr>
-            <tr>
-                <td>$140 <br> Adidas Stan Smith</td>
-                <td>$149 <br> Nike Air Force 1</td> 
-                <td>$140 <br> Adidas Stan Smith</td>
-            </tr>
-            <tr>
-                <td><img id="shoe" src="assets/slideshowImage/slideshow2.png"></td>
-                <td><img id="shoe" src="assets/slideshowImage/slideshow1.png"></td> 
-                <td><img id="shoe" src="assets/slideshowImage/slideshow2.png"></td>
-            </tr>
-            <tr>
-                <td>$140 <br> Adidas Stan Smith</td>
-                <td>$149 <br> Nike Air Force 1</td> 
-                <td>$140 <br> Adidas Stan Smith</td>
-              </tr>
-          </table>
+        <h2>MEN</h2>
+          <div class="cardLayout">
+            <?php
+              $category='men';
+              include 'shoeCard.php';
+            ?>
+          </div>
     </main>
 </div>
 </body>

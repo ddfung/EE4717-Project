@@ -1,3 +1,36 @@
+<?php
+  session_start();
+if (isset($_GET['id'])){
+  print_r($_SESSION['cart']);
+  $subjectId  = $_GET['id'];
+  // Establish connection with DB
+  @ $db = new mysqli('localhost', 'f32ee', 'f32ee', 'f32ee');
+  if (mysqli_connect_errno()) {
+    echo 'Error: Could not connect to database.  Please try again later.';
+    exit;
+  }
+  // Fetch row of shoe data using id
+  $query = "SELECT * FROM shoes_table WHERE product_id = $subjectId";
+  $result = $db->query($query);
+  $row = $result->fetch_assoc();
+}else{
+  echo "provide Id";
+}
+
+  //Cart session
+  if (!isset($_SESSION['cart'])){
+    $_SESSION['cart'] = array();
+  }
+  if (isset($_GET['name'])) {
+    $item['name'] = $_GET['name'];
+    $item['quantity'] = $_GET['quantity'];
+    $_SESSION['cart'] = $item;
+    array_push($_SESSION['cart'], $item);
+    exit();
+}
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -15,10 +48,10 @@
           <div class="navbar-center">
             <span class="nav-icon"> </span>
             <span class="nav-list">
-              <a href="index.html">LATEST</a>
-              <a href="men.html">MEN</a>
-              <a href="women.html">WOMEN</a>
-              <a href="sale.html">SALE</a>
+              <a href="index.php">LATEST</a>
+              <a href="men.php">MEN</a>
+              <a href="women.php">WOMEN</a>
+              <a href="myOrders.php">MY ORDERS</a>
               <a href="location.html">LOCATION</a>
             </span>
             <span class="nav-icon">
@@ -39,7 +72,7 @@
               <div class="mySlides">
                 <div class="numbertext">1 / 5</div>
                 <img
-                  src="assets/productPage/converseJohnElliot/converseJohnElliot.PNG"
+                  src="assets/productPage/<?php echo $row['img_diagonal'] ?>"
                   style="width: 100%"
                 />
               </div>
@@ -47,7 +80,7 @@
               <div class="mySlides">
                 <div class="numbertext">2 / 5</div>
                 <img
-                  src="assets/productPage/converseJohnElliot/converseJohnElliot_side.PNG"
+                  src="assets/productPage/<?php echo $row['img_side'] ?>"
                   style="width: 100%"
                 />
               </div>
@@ -55,7 +88,7 @@
               <div class="mySlides">
                 <div class="numbertext">3 / 5</div>
                 <img
-                  src="assets/productPage/converseJohnElliot/converseJohnElliot_back.PNG"
+                  src="assets/productPage/<?php echo $row['img_back'] ?>"
                   style="width: 100%"
                 />
               </div>
@@ -63,7 +96,7 @@
               <div class="mySlides">
                 <div class="numbertext">4 / 5</div>
                 <img
-                  src="assets/productPage/converseJohnElliot/converseJohnElliot_backside.PNG"
+                  src="assets/productPage/<?php echo $row['img_frontside'] ?>"
                   style="width: 100%"
                 />
               </div>
@@ -71,7 +104,7 @@
               <div class="mySlides">
                 <div class="numbertext">5 / 5</div>
                 <img
-                  src="assets/productPage/converseJohnElliot/converseJohnElliot_top.PNG"
+                  src="assets/productPage/<?php echo $row['img_top'] ?>"
                   style="width: 100%"
                 />
               </div>
@@ -85,7 +118,7 @@
                 <div class="column">
                   <img
                     class="demo cursor"
-                    src="assets/productPage/converseJohnElliot/converseJohnElliot.PNG"
+                    src="assets/productPage/<?php echo $row['img_diagonal'] ?>"
                     style="width: 100%"
                     onclick="currentSlide(1)"
                   />
@@ -93,7 +126,7 @@
                 <div class="column">
                   <img
                     class="demo cursor"
-                    src="assets/productPage/converseJohnElliot/converseJohnElliot_side.PNG"
+                    src="assets/productPage/<?php echo $row['img_side'] ?>"
                     style="width: 100%"
                     onclick="currentSlide(2)"
                   />
@@ -101,7 +134,7 @@
                 <div class="column">
                   <img
                     class="demo cursor"
-                    src="assets/productPage/converseJohnElliot/converseJohnElliot_back.PNG"
+                    src="assets/productPage/<?php echo $row['img_back'] ?>"
                     style="width: 100%"
                     onclick="currentSlide(3)"
                   />
@@ -109,7 +142,7 @@
                 <div class="column">
                   <img
                     class="demo cursor"
-                    src="assets/productPage/converseJohnElliot/converseJohnElliot_backside.PNG"
+                    src="assets/productPage/<?php echo $row['img_frontside'] ?>"
                     style="width: 100%"
                     onclick="currentSlide(4)"
                   />
@@ -117,7 +150,7 @@
                 <div class="column">
                   <img
                     class="demo cursor"
-                    src="assets/productPage/converseJohnElliot/converseJohnElliot_top.PNG"
+                    src="assets/productPage/<?php echo $row['img_top'] ?>"
                     style="width: 100%"
                     onclick="currentSlide(5)"
                   />
@@ -126,22 +159,19 @@
             </div>
           </div>
           <div class="productpage-column-right">
-            <h4 class="product-title">CONVERSE X JOHN ELLIOTT SKID GRIP OX</h4>
-            <p class="product-description">
-              Converse is joined by designer John Elliott for this latest take
-              on the Skid Grip. Inspired by Californian skaters, it features a
-              canvas upper that’s decorated with a lichen-inspired texture. For
-              a premium fit, an OrthoLite® sockliner ensures a cushioning feel
-              with every wear.
-            </p>
-            <span class="product-color">OAK, GREEN & EGRET</span><br /><br />
-            <span class="product-price">$185</span><br /><br />
+            <h4 class="product-title"><?php echo $row['name'] ?></h4>
+            <p class="product-description"><?php echo $row['description'] ?></p>
+            <span class="product-color"><?php echo $row['color'] ?></span><br /><br />
+            <span class="product-price">$<?php echo $row['price'] ?></span><br /><br />
             <span class="product-color">Size</span><br />
+            <?php
+              $sizes = explode(",", $row['size']);
+            ?>
             <div class="btn-group">
-              <button>US 6</button>
-              <button>US 7</button>
-              <button>US 8</button>
-              <button>US 9</button>
+              <button><?php echo  $sizes[0] ?></button>
+              <button><?php echo $sizes[1] ?></button>
+              <button><?php echo $sizes[2] ?></button>
+              <button><?php echo $sizes[3] ?></button>
             </div>
             <br /><br />
             <span class="product-color">Quantity</span><br />
