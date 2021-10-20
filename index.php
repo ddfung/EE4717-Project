@@ -42,8 +42,8 @@
         <div class="slideshow-container">
           <!-- Full-width images with number and caption text -->
           <div class="mySlides fade">
-            <div class="numbertext">1 / 3</div>
-            <a href="productPage.php?id='1'">
+            <div class="numbertext"></div>
+            <a href="productPage.php?id='8'">
               <img
                 src="assets/frontpageSlideshow/CONVERSE_JOHN_ELLIOTT_1800x.jpg"
                 style="width: 100%"
@@ -53,7 +53,7 @@
           </div>
 
           <div class="mySlides fade">
-            <div class="numbertext">2 / 3</div>
+            <div class="numbertext"></div>
             <a href="productPage.php?id='2'">
               <img
                 src="assets/frontpageSlideshow/ADIDAS_x_JAMES_BOND_1800x.jpg"
@@ -64,11 +64,13 @@
           </div>
 
           <div class="mySlides fade">
-            <div class="numbertext">3 / 3</div>
+            <div class="numbertext"></div>
+            <a href="productPage.php?id='7'">
             <img
               src="assets/frontpageSlideshow/NEW_BALANCE_XC-72_1800x.jpg"
               style="width: 100%"
             />
+            </a>
             <div class="text"></div>
           </div>
 
