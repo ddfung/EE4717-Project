@@ -1,5 +1,5 @@
 header {
-  background-color: #bbbfca;
+  background-image: url('https://images.unsplash.com/photo-1600269452121-4f2416e55c28?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2265&q=80');
   height: 130px;
   display: flex;
   justify-content: center;
@@ -10,12 +10,12 @@ header {
 
 h1 {
   font-size: 50px;
-  color: #000000;
+  color: #FFFFFF;
   text-align: center;
 }
 
 nav {
-  background-color: #e8e8e8;
+  background-color: #bbbfca;
   font-weight: bold;
   text-align: center;
   font-size: 18px;
@@ -60,6 +60,17 @@ nav a:hover {
   width: 18px;
 }
 
+.cart_items {
+  position: absolute;
+  top: 1px;
+  right: 45px;
+  background: #495464;
+  color: #FFFFFF;
+  padding: 0 2px;
+  border-radius: 30%;
+  font-size: 14px;
+}
+
 main {
   padding: 0px 0px 66px 0px;
   background-color: #ffffff;
@@ -67,7 +78,7 @@ main {
 }
 
 h2 {
-  background-color: #ffffff;
+  background-color: #e8e8e8;
   font-size: 30px;
   text-align: center;
   margin-top: 0px;
@@ -119,7 +130,6 @@ h2 {
 
 /* ---------- FOOTER ------------ */
 .flex-row-container {
-  background: #aaa;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -128,21 +138,21 @@ h2 {
 
 .flex-row-item1 {
   flex: 30%;
-  background-color: #e8e8e8;
+  background-color: transparent;
   padding-left: 15px;
   padding-right: 15px;
   height: 175px;
 }
 .flex-row-item2 {
   flex: 25%;
-  background-color: #e8e8e8;
+  background-color: transparent;
   padding-left: 15px;
   padding-right: 15px;
   height: 175px;
 }
 .flex-row-item3 {
   flex: 35%;
-  background-color: #e8e8e8;
+  background-color: transparent;
   padding-left: 15px;
   padding-right: 15px;
   height: 175px;
@@ -224,31 +234,6 @@ h2 {
   font-size: 15px;
   border-radius: 3px;
   color: #ffffff;
-}
-
-.btn-group button {
-  background-color: #e8e8e8; /* Green background */
-  border: 1px solid #495464; /* Green border */
-  color: black; /* White text */
-  padding: 10px 24px; /* Some padding */
-  cursor: pointer; /* Pointer/hand icon */
-  float: left; /*Float the buttons side by side*/
-}
-
-.btn-group button:not(:last-child) {
-  border-right: none; /* Prevent double borders */
-}
-
-/* Clear floats (clearfix hack) */
-.btn-group:after {
-  content: "";
-  clear: both;
-  display: table;
-}
-
-/* Add a background color on hover */
-.btn-group button:hover {
-  background-color: #aaa;
 }
 
 /* The Modal (background) */
@@ -375,68 +360,9 @@ hr.solid {
   padding-left: 20px;
 }
 
-.month {
-  background: #d1b38e;
-  font-weight: bold;
-  font-size: large;
-}
-
-#musicTable {
-  width: 85%;
-  margin: auto;
-  border-spacing: 0px;
-  padding-left: 60px;
-  padding-right: 50px;
-}
-
-#musicTable td:nth-of-type(even) {
-  padding-bottom: 15px;
-  padding-left: 20px;
-  padding-right: 20px;
-}
-
-#musicImage {
-  flex-grow: 1;
-}
-.musicImage img {
-  width: 80%;
-  height: 80%;
-  padding-left: 20px;
-}
-
-form {
-  font-family: Verdana, Arial, sans-serif;
-  width: 420px;
-  height: 200px;
-}
-
-label {
-  /* display: inline-block; */
-  float: left;
-  clear: left;
-  width: 100px;
-  text-align: right;
-  margin-bottom: 14px;
-}
-
-input[type="text"],
-input[type="date"],
-input[type="email"],
-textarea {
-  float: left;
-  margin-left: 50px;
-  /* display: inline-block; */
-  margin-bottom: 14px;
-}
-
-input[type="submit"],
-input[type="reset"] {
-  margin-top: 20px;
-  margin-right: 200px;
-  float: left;
-}
-
 body {
+  background-size: cover;
+  /* background-image: url('https://images.unsplash.com/photo-1600269452121-4f2416e55c28?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2265&q=80'); */
   margin: auto;
   background-color: #ffffff;
   font-size: 13px;
@@ -446,6 +372,7 @@ body {
 }
 
 footer {
+  /* background-image: url('https://images.unsplash.com/photo-1600269452121-4f2416e55c28?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2265&q=80'); */
   background-color: #e8e8e8;
   font-size: 11px;
   font-style: italic;
@@ -646,3 +573,31 @@ footer,
 .demo:hover {
   opacity: 1;
 }
+
+/* ------------- SIZE BUTTONS ------------- */
+.buttongroup label{
+  border: 1px solid #fff;
+  padding: 6px 12px;  
+  cursor: pointer;
+  color: #fff;
+  background-color: #777;
+  transition: all 0.2s;
+}
+
+.buttongroup label:not(:first-of-type){
+  border-left: 0;
+}
+
+.buttongroup label:hover{
+  background-color: #333;
+}
+
+/* Hide the radio button */
+input[name='size']{ 
+  display:none;
+}
+
+/* The checked buttons label style */
+input[name='size']:checked+label{
+  background-color: #ed6b06;
+} 

@@ -1,3 +1,14 @@
+<?php
+    session_start();
+    var_dump($_SESSION);
+    $id=session_id();
+    
+    $_SESSION['name'] = "Ultra boost 2019";
+    $_SESSION['qty'] = "4";
+
+    echo 'Name: ' .$_SESSION['name'].'<br />';
+    echo 'Quantity: ' .$_SESSION['qty'];
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

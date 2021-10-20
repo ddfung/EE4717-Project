@@ -1,8 +1,8 @@
 <?php
-  session_start();
+session_start();
 if (isset($_GET['id'])){
-  print_r($_SESSION['cart']);
   $subjectId  = $_GET['id'];
+  
   // Establish connection with DB
   @ $db = new mysqli('localhost', 'f32ee', 'f32ee', 'f32ee');
   if (mysqli_connect_errno()) {
@@ -13,20 +13,18 @@ if (isset($_GET['id'])){
   $query = "SELECT * FROM shoes_table WHERE product_id = $subjectId";
   $result = $db->query($query);
   $row = $result->fetch_assoc();
-}else{
-  echo "provide Id";
-}
 
-  //Cart session
-  if (!isset($_SESSION['cart'])){
+  // Check for cart items
+  if (!isset($_SESSION['cart'])) {
     $_SESSION['cart'] = array();
   }
-  if (isset($_GET['name'])) {
-    $item['name'] = $_GET['name'];
-    $item['quantity'] = $_GET['quantity'];
-    $_SESSION['cart'] = $item;
-    array_push($_SESSION['cart'], $item);
+  if (isset($_GET['buy'])) {
+    $_SESSION['cart'][] = $_GET['buy'];
+    header('location: ' .$_SERVER['PHP_SELF'] . '?' . SID);
     exit();
+  }
+}else{
+  echo "provide Id";
 }
 
 
@@ -56,8 +54,9 @@ if (isset($_GET['id'])){
             </span>
             <span class="nav-icon">
               <a href="shoppingBag.html"
-                ><img id="shoppingBag" src="assets/shoppingBag/shoppingBag.png"
-              /></a>
+                ><img id="shoppingBag" src="assets/shoppingBag/shoppingBag.png"/>
+                <div class="cart_items">6</div>
+              </a>
             </span>
           </div>
         </b>
@@ -163,15 +162,27 @@ if (isset($_GET['id'])){
             <p class="product-description"><?php echo $row['description'] ?></p>
             <span class="product-color"><?php echo $row['color'] ?></span><br /><br />
             <span class="product-price">$<?php echo $row['price'] ?></span><br /><br />
-            <span class="product-color">Size</span><br />
+            <span class="product-color">Size</span><br /><br />
             <?php
               $sizes = explode(",", $row['size']);
             ?>
-            <div class="btn-group">
-              <button><?php echo  $sizes[0] ?></button>
-              <button><?php echo $sizes[1] ?></button>
-              <button><?php echo $sizes[2] ?></button>
-              <button><?php echo $sizes[3] ?></button>
+              <div class="buttongroup">  
+                <input id="all" type="radio" value="<?php echo $sizes[0]?>" name="size" checked/>
+                <label for="all">
+                <?php echo $sizes[0] ?>
+                </label>
+                <input id="Netherlands" type="radio" value="<?php echo $sizes[1] ?>" name="size"/>
+                <label for="Netherlands">    
+                  <?php echo $sizes[1] ?>
+                </label>
+                <input id="Belgium" type="radio" value="<?php echo $sizes[2] ?>" name="size"/> 
+                <label for="Belgium">    
+                  <?php echo $sizes[2] ?>
+                </label>
+                <input id="Germany" type="radio" value="<?php echo $sizes[3] ?>" name="size"/> 
+                <label for="Germany">    
+                  <?php echo $sizes[3] ?>
+                </label>
             </div>
             <br /><br />
             <span class="product-color">Quantity</span><br />

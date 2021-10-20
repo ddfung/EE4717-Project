@@ -1,3 +1,12 @@
+<?php
+    session_start();
+    var_dump($_SESSION);
+    $id=session_id();
+    
+    echo 'Name: ' .$_SESSION['name'].'<br />';
+    echo 'Quantity: ' .$_SESSION['qty'];
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
