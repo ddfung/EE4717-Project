@@ -1,8 +1,8 @@
 <?php
 session_start();
-if (isset($_GET['id'])){
-  $subjectId  = $_GET['id'];
-  
+  if (isset($_GET['id'])){
+    $subjectId  = $_GET['id'];
+    
   // Establish connection with DB
   @ $db = new mysqli('localhost', 'f32ee', 'f32ee', 'f32ee');
   if (mysqli_connect_errno()) {
@@ -18,11 +18,13 @@ if (isset($_GET['id'])){
   if (!isset($_SESSION['cart'])) {
     $_SESSION['cart'] = array();
   }
-  if (isset($_GET['buy'])) {
-    $_SESSION['cart'][] = $_GET['buy'];
-    header('location: ' .$_SERVER['PHP_SELF'] . '?' . SID);
-    exit();
+  if ($_POST['quantity']) {
+    $_SESSION['cart'][] = ['product_id'=>$subjectId, 'name'=>$row['name'], 'price'=>$row['price'], 'quantity'=>$_POST['quantity']] ;
   }
+
+  print_r($_SESSION['cart']);
+
+
 }else{
   echo "provide Id";
 }
@@ -50,12 +52,12 @@ if (isset($_GET['id'])){
               <a href="men.php">MEN</a>
               <a href="women.php">WOMEN</a>
               <a href="myOrders.php">MY ORDERS</a>
-              <a href="location.html">LOCATION</a>
+              <a href="location.php">LOCATION</a>
             </span>
             <span class="nav-icon">
               <a href="shoppingBag.html"
                 ><img id="shoppingBag" src="assets/shoppingBag/shoppingBag.png"/>
-                <div class="cart_items">6</div>
+                <div class="cart_items"><?php echo count($_SESSION['cart']) ?></div>
               </a>
             </span>
           </div>
@@ -80,7 +82,7 @@ if (isset($_GET['id'])){
                 <div class="numbertext">2 / 5</div>
                 <img
                   src="assets/productPage/<?php echo $row['img_side'] ?>"
-                  style="width: 100%"
+                  style="width: 100%" 
                 />
               </div>
 
@@ -163,53 +165,38 @@ if (isset($_GET['id'])){
             <span class="product-color"><?php echo $row['color'] ?></span><br /><br />
             <span class="product-price">$<?php echo $row['price'] ?></span><br /><br />
             <span class="product-color">Size</span><br /><br />
-            <?php
-              $sizes = explode(",", $row['size']);
-            ?>
-              <div class="buttongroup">  
-                <input id="all" type="radio" value="<?php echo $sizes[0]?>" name="size" checked/>
-                <label for="all">
-                <?php echo $sizes[0] ?>
-                </label>
-                <input id="Netherlands" type="radio" value="<?php echo $sizes[1] ?>" name="size"/>
-                <label for="Netherlands">    
-                  <?php echo $sizes[1] ?>
-                </label>
-                <input id="Belgium" type="radio" value="<?php echo $sizes[2] ?>" name="size"/> 
-                <label for="Belgium">    
-                  <?php echo $sizes[2] ?>
-                </label>
-                <input id="Germany" type="radio" value="<?php echo $sizes[3] ?>" name="size"/> 
-                <label for="Germany">    
-                  <?php echo $sizes[3] ?>
-                </label>
-            </div>
-            <br /><br />
-            <span class="product-color">Quantity</span><br />
-            <div class="quantity buttons_added">
-              <input
-                type="number"
-                step="1"
-                min="0"
-                value="1"
-                title="Qty"
-                size="3"
-              />
-            </div>
-            <br /><br />
-
-            <!-- Trigger/Open The Modal -->
-            <button id="myBtn">Add to Cart</button>
-
-            <!-- The Modal -->
-            <div id="myModal" class="modal">
-              <!-- Modal content -->
-              <div class="modal-content">
-                <span class="close">&times;</span>
-                <p>Item has been added to Cart.</p>
+            <form action="productPage.php?id=<?php echo $subjectId ?>" method="POST">
+                <div class="buttongroup">  
+                  <?php
+                    $sizes = explode(",", $row['size']);
+                    for ($i=0; $i <count($sizes); $i++) {
+                      echo "<input id='$sizes[$i]' type='radio' value='$sizes[$i]' name='size' checked/>
+                            <label for='$sizes[$i]'>$sizes[$i]</label>";
+                    }
+                  ?>
+                </div>
+              <br /><br />
+              <span class="product-color">Quantity</span><br />
+              <div class="quantity buttons_added">
+                <input type="number" name="quantity" step="1" min="0" value="1" title="Qty" size="3"/>
               </div>
-            </div>
-            <script type="text/javascript" src="modal cart.js"></script>
+              <br /><br />
+              <!-- Trigger/Open The Modal -->
+              <button id="myBtn">Add to Cart</button>
+              <!-- The Modal -->
+              <div id="myModal" class="modal">
+                <!-- Modal content -->
+                <div class="modal-content">
+                  <span class="close">&times;</span>
+                  <p>Item has been added to Cart.</p>
+                </div>
+              </div>
+              <script type="text/javascript" src="modal cart.js"></script>
+              <!-- <input type="hidden" id="custId" name="custId" value="3487">
+              <input type="hidden" id="custId" name="custId" value="3487"> -->
+
+              <input type="submit" value="Submit">
+            </form>
           </div>
         </div>
       </main>

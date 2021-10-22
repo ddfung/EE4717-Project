@@ -66,7 +66,7 @@
               <a href="men.php">MEN</a>
               <a href="women.php">WOMEN</a>
               <a href="myOrders.php">MY ORDERS</a>
-              <a href="location.html">LOCATION</a>
+              <a href="location.php">LOCATION</a>
             </span>
             <span class="nav-icon">
               <a href="shoppingBag.html"

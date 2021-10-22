@@ -1,3 +1,17 @@
+<?php
+    session_start();
+    $id=session_id();
+    
+  // Check for cart items
+  if (!isset($_SESSION['cart'])) {
+    $_SESSION['cart'] = array();
+  }
+  if ($_POST['quantity']) {
+    $_SESSION['cart'][] = ['product_id'=>$subjectId, 'name'=>$row['name'], 'price'=>$row['price'], 'quantity'=>$_POST['quantity']] ;
+  }
+
+  print_r($_SESSION['cart']);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,12 +33,13 @@
               <a href="men.php">MEN</a>
               <a href="women.php">WOMEN</a>
               <a href="myOrders.php">MY ORDERS</a>
-              <a href="location.html">LOCATION</a>
+              <a href="location.php">LOCATION</a>
             </span>
             <span class="nav-icon">
-              <a href="shoppingBag.html"
-                ><img id="shoppingBag" src="assets/shoppingBag/shoppingBag.png"
-              /></a>
+            <a href="shoppingBag.html"
+                ><img id="shoppingBag" src="assets/shoppingBag/shoppingBag.png"/>
+                <div class="cart_items"><?php echo count($_SESSION['cart']) ?></div>
+              </a>
             </span>
           </div>
         </b>
