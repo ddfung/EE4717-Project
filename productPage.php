@@ -18,14 +18,12 @@ session_start();
   if (!isset($_SESSION['cart'])) {
     $_SESSION['cart'] = array();
   }
-  if (isset($_GET['buy'])) {
-    $_SESSION['cart'][] = $_GET['buy'];
-    header('location: ' .$_SERVER['PHP_SELF'] . '?' . SID);
-    exit();
+  if ($_POST['quantity']) {
+    $_SESSION['cart'][] = ['product_id'=>$subjectId, 'name'=>$row['name'], 'price'=>$row['price'], 'quantity'=>$_POST['quantity']] ;
   }
 
-    echo "size: " .$_POST['size'];
-    echo "qty: " .$_POST['quantity'];
+  print_r($_SESSION['cart']);
+
 
 }else{
   echo "provide Id";
@@ -54,12 +52,12 @@ session_start();
               <a href="men.php">MEN</a>
               <a href="women.php">WOMEN</a>
               <a href="myOrders.php">MY ORDERS</a>
-              <a href="location.html">LOCATION</a>
+              <a href="location.php">LOCATION</a>
             </span>
             <span class="nav-icon">
               <a href="shoppingBag.html"
                 ><img id="shoppingBag" src="assets/shoppingBag/shoppingBag.png"/>
-                <div class="cart_items">6</div>
+                <div class="cart_items"><?php echo count($_SESSION['cart']) ?></div>
               </a>
             </span>
           </div>
@@ -194,6 +192,9 @@ session_start();
                 </div>
               </div>
               <script type="text/javascript" src="modal cart.js"></script>
+              <!-- <input type="hidden" id="custId" name="custId" value="3487">
+              <input type="hidden" id="custId" name="custId" value="3487"> -->
+
               <input type="submit" value="Submit">
             </form>
           </div>
