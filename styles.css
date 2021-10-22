@@ -337,6 +337,76 @@ hr.solid {
   margin-right: 40px;
 }
 
+/* ------------- ORDER CONFIRMATION ------------- */
+.orderconfirmTable{
+  margin: auto;
+	width: 85%;
+	table-layout: fixed;
+  text-align: right;
+  font-family: Helvetica,Arial,sans-serif;
+}
+
+.orderconfirmTable th {
+	padding: 20px;
+  padding-right: 30px;
+	overflow: hidden;
+}
+
+.orderconfirmTable td {
+	padding-left: 5px;
+	overflow: hidden;
+  text-align: left;
+}
+
+.orderconfirmTable input {
+	width: 80%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.orderconfirmTable label {
+	font-size: larger;
+}
+
+.submitinfoBtn{
+  text-align: center;
+}
+
+#submitDeliveryInfoBtn {
+  width: 30%;
+  background-color: grey;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: center;  
+}
+
+.itemsorderedTable{  
+  margin: auto;
+	width: 100%;
+	table-layout: fixed;
+  /* border: thick; */
+}
+
+.itemsorderedTable th {
+  text-align: center;
+  font-size: larger;
+  padding:20px;  
+}
+
+.itemsorderedTable td {
+  text-align: center;
+  padding: 20px;
+  overflow: hidden;  
+}
+
 /* ------------- LOCATION ------------- */
 #shopfront {
   padding-bottom: 10px;

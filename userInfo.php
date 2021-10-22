@@ -1,7 +1,38 @@
+<?php
+session_start();
+  if (isset($_GET['id'])){
+    $subjectId  = $_GET['id'];
+    
+  // Establish connection with DB
+  @ $db = new mysqli('localhost', 'f32ee', 'f32ee', 'f32ee');
+  if (mysqli_connect_errno()) {
+    echo 'Error: Could not connect to database.  Please try again later.';
+    exit;
+  }
+  // Fetch row of shoe data using id
+  $query = "SELECT * FROM shoes_table WHERE product_id = $subjectId";
+  $result = $db->query($query);
+  $row = $result->fetch_assoc();
+
+  // Check for cart items
+  if (!isset($_SESSION['cart'])) {
+    $_SESSION['cart'] = array();
+  }
+  if ($_POST['quantity']) {
+    $_SESSION['cart'][] = ['product_id'=>$subjectId, 'name'=>$row['name'], 'price'=>$row['price'], 'quantity'=>$_POST['quantity']] ;
+  }
+
+  print_r($_SESSION['cart']);
+  
+
+}else{
+  echo "provide Id";
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>SHOE SHOP</title>
+<title>DAMES.</title>
 <meta charset="utf-8">
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -22,59 +53,64 @@
               <a href="location.php">LOCATION</a>
             </span>
             <span class="nav-icon">
-              <a href="shoppingBag.html"
+              <a href="shoppingBag.php"
                 ><img id="shoppingBag" src="assets/shoppingBag/shoppingBag.png"
-              /></a>
+              /><div class="cart_items"><?php echo count($_SESSION['cart']) ?></div></a>
             </span>
           </div>
         </b>
       </nav>
     <main>
-        <h2>MY ORDERS</h2>
-        <form class="jobSignUp" action="show_get.php" method="GET">
-          <div>
-            <label>*Name:</label>
-            <input
+        <h2>DELIVERY INFO</h2>
+        <form action="orderconfirmation.php" method="POST">
+        <table class="orderconfirmTable">
+          <tr>
+            <th><label>Customer Name:</label></th>
+            <td><input
               type="text"
-              id="name"
-              name="name"
+              textarea rows='2' cols='50'
+              id="customer_name"
+              name="customer_name"
               placeholder="Enter your name here"
               onchange="validateName()"
               required
-            />
-          </div>
-          <div>
-            <label>*E-mail:</label>
-            <input
-              type="email"
+            /></td>
+          </tr>
+          <tr>
+            <th><label>Email:</label></th>
+            <td><input
+              type="text"
               id="email"
               name="email"
-              placeholder="Enter your Email-ID here"
+              placeholder="Enter your email address here"
               onchange="validateEmail()"
               required
-            />
-          </div>
-          <div>
-            <label>Start Date:</label>
-            <input type="date" id="startDate" name="startDate" />
-          </div>
-          <div>
-            <label style="vertical-align: top" ;>*Experience:</label>
-            <textarea
-              name="experience"
-              rows="4"
-              cols="40"
-              placeholder="Enter your past experience here"
+            /></td>
+          </tr>
+          <tr>
+            <th><label>Contact:</label></th>
+            <td><input
+              type="text"
+              id="phone"
+              name="phone"
+              placeholder="Enter your contact no. here"
+              onchange="validateContact()"              
               required
-            ></textarea>
-          </div>
-          <div>
-            <input type="reset" id="" name="clear" value="Clear" />
-          </div>
-          <br />
-          <div>
-            <input type="submit" id="" name="submit" value="Apply Now" />
-          </div>
+            /></td>
+          </tr>
+          <tr>
+            <th><label>Address:</label></th>
+            <td><input
+              type="text"
+              id="address"
+              name="address"
+              placeholder="Enter your delivery address here"              
+              required
+            /></td>
+          </tr>          
+        </table>         
+          <div class='submitinfoBtn'><input type="submit" id="submitDeliveryInfoBtn" name="submit" value="Submit" /></div>
+          <div class='submitinfoBtn'><input type="reset" id="submitDeliveryInfoBtn" name="clear" value="Clear" /></div>          
         </form>
     </main>
 </div>
@@ -104,4 +140,5 @@
         </div>
      </div>
 </footer>
+<script type="text/javascript" src="validate.js"></script>
 </html>

@@ -1,8 +1,20 @@
 <?php
-    session_start();
-    $id=session_id();
+session_start();
+  if (isset($_GET['id'])){
+    $subjectId  = $_GET['id'];
+    
+  // Establish connection with DB
+  @ $db = new mysqli('localhost', 'f32ee', 'f32ee', 'f32ee');
+  if (mysqli_connect_errno()) {
+    echo 'Error: Could not connect to database.  Please try again later.';
+    exit;
+  }
+  // Fetch row of shoe data using id
+  $query = "SELECT * FROM shoes_table WHERE product_id = $subjectId";
+  $result = $db->query($query);
+  $row = $result->fetch_assoc();
 
-      // Check for cart items
+  // Check for cart items
   if (!isset($_SESSION['cart'])) {
     $_SESSION['cart'] = array();
   }
@@ -11,12 +23,16 @@
   }
 
   print_r($_SESSION['cart']);
+  
 
+}else{
+  echo "provide Id";
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>SHOE SHOP</title>
+<title>DAMES.</title>
 <meta charset="utf-8">
 <link rel="stylesheet" href="styles.css">
 </head>

@@ -1,7 +1,39 @@
+<?php
+session_start();
+  if (isset($_GET['id'])){
+    $subjectId  = $_GET['id'];
+    
+  // Establish connection with DB
+  @ $db = new mysqli('localhost', 'f32ee', 'f32ee', 'f32ee');
+  if (mysqli_connect_errno()) {
+    echo 'Error: Could not connect to database.  Please try again later.';
+    exit;
+  }
+  // Fetch row of shoe data using id
+  $query = "SELECT * FROM shoes_table WHERE product_id = $subjectId";
+  $result = $db->query($query);
+  $row = $result->fetch_assoc();
+
+  // Check for cart items
+  if (!isset($_SESSION['cart'])) {
+    $_SESSION['cart'] = array();
+  }
+  if ($_POST['quantity']) {
+    $_SESSION['cart'][] = ['product_id'=>$subjectId, 'name'=>$row['name'], 'price'=>$row['price'], 'quantity'=>$_POST['quantity']] ;
+  }
+
+  print_r($_SESSION['cart']);
+  
+
+}else{
+  echo "provide Id";
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>SHOE SHOP</title>
+<title>DAMES.</title>
 <meta charset="utf-8">
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -22,9 +54,9 @@
               <a href="location.php">LOCATION</a>
             </span>
             <span class="nav-icon">
-              <a href="shoppingBag.html"
+              <a href="shoppingBag.php"
                 ><img id="shoppingBag" src="assets/shoppingBag/shoppingBag.png"
-              /></a>
+              /><div class="cart_items"><?php echo count($_SESSION['cart']) ?></div></a>
             </span>
           </div>
         </b>
@@ -76,9 +108,9 @@
         </div>
         <hr class="solid"><br>            
         <span class="cartTotal">SUBTOTAL: $290</span><br><br><br><br>
-        <button id="checkoutBtn" >CHECKOUT</button>
-        <button id="backBtn" onclick="history.back(-1)">BACK TO SHOPPING</button>
-
+        <a href="userInfo.php"><button id="checkoutBtn" >CHECKOUT</button></a>
+        <a href="index.php"><button id="backBtn">BACK TO SHOPPING</button></a>
+        <!-- onclick="history.back(-1)" -->
     </main>
 </div>
 </body>

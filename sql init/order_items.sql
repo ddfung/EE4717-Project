@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Oct 21, 2021 at 09:21 PM
+-- Generation Time: Oct 22, 2021 at 03:50 PM
 -- Server version: 5.5.62-0ubuntu0.14.04.1
 -- PHP Version: 5.5.9-1ubuntu4.29
 
@@ -45,7 +45,9 @@ INSERT INTO `order_items` (`order_id`, `product_id`, `size`, `quantity`) VALUES
 (3, 5, 6, 3),
 (4, 2, 8, 1),
 (4, 6, 9, 1),
-(4, 5, 7, 3);
+(4, 5, 7, 3),
+(4, 8, 7, 2),
+(4, 1, 8, 4);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

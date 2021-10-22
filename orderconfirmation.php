@@ -1,4 +1,64 @@
 <?php
+session_start();
+  if (isset($_GET['id'])){
+    $subjectId  = $_GET['id'];
+    
+  // Establish connection with DB
+  @ $db = new mysqli('localhost', 'f32ee', 'f32ee', 'f32ee');
+  if (mysqli_connect_errno()) {
+    echo 'Error: Could not connect to database.  Please try again later.';
+    exit;
+  }
+  // Fetch row of shoe data using id
+  $query = "SELECT * FROM shoes_table WHERE product_id = $subjectId";
+  $result = $db->query($query);
+  $row = $result->fetch_assoc();
+
+  // Check for cart items
+  if (!isset($_SESSION['cart'])) {
+    $_SESSION['cart'] = array();
+  }
+  if ($_POST['quantity']) {
+    $_SESSION['cart'][] = ['product_id'=>$subjectId, 'name'=>$row['name'], 'price'=>$row['price'], 'quantity'=>$_POST['quantity']] ;
+  }
+
+  print_r($_SESSION['cart']);
+
+}else{
+  echo "provide Id";
+}
+session_destroy();
+?>
+<?php
+//create short variables
+$customer_name=$_POST['customer_name'];
+$customer_email=$_POST['email'];
+$customer_contact=$_POST['phone'];
+$customer_address=$_POST['address'];
+
+if (!$customer_name || !$customer_email || !$customer_contact || !$customer_address) {
+  echo "You have not entered all the required details.<br />"
+       ."Please go back and try again.";
+  exit;
+}
+@ $db = new mysqli('localhost','f32ee','f32ee','f32ee');
+    if(mysqli_connect_errno()){
+        echo 'Error: Could not connect to database.  Please try again later.';
+	  exit;
+    }
+    $query = "INSERT INTO customers_table values
+            (null,'".$customer_name."', '".$customer_email."', '".$customer_contact."', '".$customer_address."')";
+    $result = $db->query($query); //query submission
+    //insert query results
+    if ($result) {
+      echo  $db->affected_rows." book inserted into database.";
+      
+    } else {
+      echo "An error has occurred.  The item was not added.";
+    }
+    $db->close();
+?>
+<?php
 @ $db = new mysqli('localhost', 'f32ee', 'f32ee', 'f32ee');
     if(mysqli_connect_errno()){
         echo 'Error: Could not connect to database.  Please try again later.';
@@ -15,40 +75,38 @@
     $num_results = $result->num_rows; //retrieve num of rows in result set
     $arr = array();    
     for ($i=0; $i <$num_results; $i++){
-        $row = $result->fetch_assoc();
-        // $row['revenue']=$row['quantity']*$row['price'];
+        $row = $result->fetch_assoc();        
         array_push($arr,$row);//push row array into bigger array
-        // // for ($i=$i-1; $i>0;$i--){
-        //     if ($arr[$i-1]['order_id']===$arr[$i-2]['order_id']){
-        //         array_push($latest_arr,$row);
-        //     }
         }    
     // print_r($arr);
     
 
-    $query="SELECT order_items.order_id, 
-    shoes_table.product_id, shoes_table.name 
+    $query="SELECT order_items.*, 
+    shoes_table.product_id, shoes_table.name
     FROM shoes_table INNER JOIN order_items
     ON order_items.product_id = shoes_table.product_id
     WHERE order_items.order_id = (SELECT MAX(order_items.order_id) FROM order_items)
     ";
     $result = $db -> query($query); //query submission
     $num_results = $result->num_rows; //retrieve num of rows in result set    
-    $items_arr = array();    
-    $item_names = array();    
+    $item_names = array();
+    $item_size = array();
+    $item_quantity = array();  
     for ($j=0; $j <$num_results; $j++){
-        $row = $result->fetch_assoc();
-        array_push($item_names,$row['name']);
-        // $row['revenue']=$row['quantity']*$row['price'];
-        // array_push($items_arr,$row);//push row array into bigger array        
+        $row = $result->fetch_assoc();        
+        array_push($item_names,$row['name']);        
+        array_push($item_size,$row['size']);        
+        array_push($item_quantity,$row['quantity']);            
     }
-    // print_r($items_arr);
     print_r($item_names);
+    print_r($item_size);
+    print_r($item_quantity);
+    
 ?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>SHOE SHOP</title>
+    <title>DAMES.</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="styles.css" />
   </head>
@@ -69,9 +127,9 @@
               <a href="location.php">LOCATION</a>
             </span>
             <span class="nav-icon">
-              <a href="shoppingBag.html"
+              <a href="shoppingBag.php"
                 ><img id="shoppingBag" src="assets/shoppingBag/shoppingBag.png"/>
-                <div class="cart_items">6</div>
+                <div class="cart_items"><?php echo count($_SESSION['cart']) ?></div>
               </a>
             </span>
           </div>
@@ -79,14 +137,50 @@
       </nav>
       <main>
         <h2>Order Confirmation</h2>
-        <span>Order ID: <?php echo $arr[$i-1]['order_id']?><br></span>
-        <span>Customer Name: <?php echo $arr[$i-1]['customer_name']?><br></span>
-        <span>Email: <?php echo $arr[$i-1]['email']?><br></span>
-        <span>Contact: <?php echo $arr[$i-1]['phone']?><br></span>        
-        <span>Address: <?php echo $arr[$i-1]['address']?><br></span>        
-        <span>Items ordered: <?php foreach($item_names as $key => $val)
-        echo "{$val}<br>";
-     ?></span>        
+        <table class="orderconfirmTable">
+          <tr>
+            <th>Order ID: </th>
+            <td><?php echo $arr[$i-1]['order_id']?></td>
+          </tr>
+          <tr>
+            <th>Customer Name: </th>
+            <td><?php echo $arr[$i-1]['customer_name']?></td>
+          </tr>
+          <tr>
+            <th>Email: </th>
+            <td><?php echo $arr[$i-1]['email']?></td>
+          </tr>
+          <tr>
+            <th>Contact: </th>
+            <td><?php echo $arr[$i-1]['phone']?></td>
+          </tr>
+          <tr>
+            <th>Address: </th>
+            <td><?php echo $arr[$i-1]['address']?></td>
+          </tr>
+        </table>
+        <table class='itemsorderedTable'>
+          <tr>
+            <th style='font-size:x-large' colspan='4'>Items Ordered</th>
+          </tr>          
+          <tr>
+            <th colspan='2'>Items Name</th>                  
+          <th>Size</th>         
+          <th>Quantity</th>
+          </tr>                      
+          <tr>
+            <td colspan='2'><?php foreach($item_names as $key=>$val)
+            echo "{$val}<br><br>"?>
+            </td>
+            <td><?php foreach($item_size as $key=>$val)
+            echo "{$val}<br><br>"?>
+            </td>
+            <td><?php foreach($item_quantity as $key=>$val)
+            echo "{$val}<br><br>"?>
+            </td>
+          </tr>         
+        </table>
+        <a href="index.php"><button id="backBtn">BACK TO SHOPPING</button></a>            
       </main>
     </div>
   </body>
