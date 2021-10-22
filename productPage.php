@@ -1,8 +1,8 @@
 <?php
 session_start();
-if (isset($_GET['id'])){
-  $subjectId  = $_GET['id'];
-  
+  if (isset($_GET['id'])){
+    $subjectId  = $_GET['id'];
+    
   // Establish connection with DB
   @ $db = new mysqli('localhost', 'f32ee', 'f32ee', 'f32ee');
   if (mysqli_connect_errno()) {
@@ -23,6 +23,10 @@ if (isset($_GET['id'])){
     header('location: ' .$_SERVER['PHP_SELF'] . '?' . SID);
     exit();
   }
+
+    echo "size: " .$_POST['size'];
+    echo "qty: " .$_POST['quantity'];
+
 }else{
   echo "provide Id";
 }
@@ -80,7 +84,7 @@ if (isset($_GET['id'])){
                 <div class="numbertext">2 / 5</div>
                 <img
                   src="assets/productPage/<?php echo $row['img_side'] ?>"
-                  style="width: 100%"
+                  style="width: 100%" 
                 />
               </div>
 
@@ -163,53 +167,35 @@ if (isset($_GET['id'])){
             <span class="product-color"><?php echo $row['color'] ?></span><br /><br />
             <span class="product-price">$<?php echo $row['price'] ?></span><br /><br />
             <span class="product-color">Size</span><br /><br />
-            <?php
-              $sizes = explode(",", $row['size']);
-            ?>
-              <div class="buttongroup">  
-                <input id="all" type="radio" value="<?php echo $sizes[0]?>" name="size" checked/>
-                <label for="all">
-                <?php echo $sizes[0] ?>
-                </label>
-                <input id="Netherlands" type="radio" value="<?php echo $sizes[1] ?>" name="size"/>
-                <label for="Netherlands">    
-                  <?php echo $sizes[1] ?>
-                </label>
-                <input id="Belgium" type="radio" value="<?php echo $sizes[2] ?>" name="size"/> 
-                <label for="Belgium">    
-                  <?php echo $sizes[2] ?>
-                </label>
-                <input id="Germany" type="radio" value="<?php echo $sizes[3] ?>" name="size"/> 
-                <label for="Germany">    
-                  <?php echo $sizes[3] ?>
-                </label>
-            </div>
-            <br /><br />
-            <span class="product-color">Quantity</span><br />
-            <div class="quantity buttons_added">
-              <input
-                type="number"
-                step="1"
-                min="0"
-                value="1"
-                title="Qty"
-                size="3"
-              />
-            </div>
-            <br /><br />
-
-            <!-- Trigger/Open The Modal -->
-            <button id="myBtn">Add to Cart</button>
-
-            <!-- The Modal -->
-            <div id="myModal" class="modal">
-              <!-- Modal content -->
-              <div class="modal-content">
-                <span class="close">&times;</span>
-                <p>Item has been added to Cart.</p>
+            <form action="productPage.php?id=<?php echo $subjectId ?>" method="POST">
+                <div class="buttongroup">  
+                  <?php
+                    $sizes = explode(",", $row['size']);
+                    for ($i=0; $i <count($sizes); $i++) {
+                      echo "<input id='$sizes[$i]' type='radio' value='$sizes[$i]' name='size' checked/>
+                            <label for='$sizes[$i]'>$sizes[$i]</label>";
+                    }
+                  ?>
+                </div>
+              <br /><br />
+              <span class="product-color">Quantity</span><br />
+              <div class="quantity buttons_added">
+                <input type="number" name="quantity" step="1" min="0" value="1" title="Qty" size="3"/>
               </div>
-            </div>
-            <script type="text/javascript" src="modal cart.js"></script>
+              <br /><br />
+              <!-- Trigger/Open The Modal -->
+              <button id="myBtn">Add to Cart</button>
+              <!-- The Modal -->
+              <div id="myModal" class="modal">
+                <!-- Modal content -->
+                <div class="modal-content">
+                  <span class="close">&times;</span>
+                  <p>Item has been added to Cart.</p>
+                </div>
+              </div>
+              <script type="text/javascript" src="modal cart.js"></script>
+              <input type="submit" value="Submit">
+            </form>
           </div>
         </div>
       </main>

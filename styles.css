@@ -53,7 +53,7 @@ nav a:visited {
   color: #000000;
 }
 nav a:hover {
-  color: rgb(247, 188, 100);
+  color: rgb(235, 148, 48);
 }
 
 #shoppingBag {
@@ -577,11 +577,12 @@ footer,
 /* ------------- SIZE BUTTONS ------------- */
 .buttongroup label{
   border: 1px solid #fff;
-  padding: 6px 12px;  
+  padding: 10px 16px;  
   cursor: pointer;
   color: #fff;
   background-color: #777;
   transition: all 0.2s;
+  border-radius: 5%;
 }
 
 .buttongroup label:not(:first-of-type){
