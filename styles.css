@@ -291,13 +291,13 @@ h2 {
 .cartTable th {
   justify-content: start;
   text-align: start;
-  font-size: 18px;
+  font-size: 20px;
 }
 
 .cartTable td {
   justify-content: start;
   text-align: start;
-  font-size: 16px;
+  font-size: 18px;
 }
 
 #delete {
@@ -312,7 +312,7 @@ hr.solid {
 
 .cartTotal {
   float: right;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: bold;
   padding-right: 125px;
 }

@@ -1,32 +1,16 @@
 <?php
 session_start();
-  if (isset($_GET['id'])){
-    $subjectId  = $_GET['id'];
-    
-  // Establish connection with DB
-  @ $db = new mysqli('localhost', 'f32ee', 'f32ee', 'f32ee');
-  if (mysqli_connect_errno()) {
-    echo 'Error: Could not connect to database.  Please try again later.';
-    exit;
-  }
-  // Fetch row of shoe data using id
-  $query = "SELECT * FROM shoes_table WHERE product_id = $subjectId";
-  $result = $db->query($query);
-  $row = $result->fetch_assoc();
+if (!isset($_SESSION['cart'])) {
+  $_SESSION['cart'] = array();
+}
 
-  // Check for cart items
-  if (!isset($_SESSION['cart'])) {
-    $_SESSION['cart'] = array();
-  }
-  if ($_POST['quantity']) {
-    $_SESSION['cart'][] = ['product_id'=>$subjectId, 'name'=>$row['name'], 'price'=>$row['price'], 'quantity'=>$_POST['quantity']] ;
-  }
+print_r($_SESSION['cart']);
 
-  print_r($_SESSION['cart']);
-  
-
-}else{
-  echo "provide Id";
+// stablish connection with DB
+@ $db = new mysqli('localhost', 'f32ee', 'f32ee', 'f32ee');
+if (mysqli_connect_errno()) {
+  echo 'Error: Could not connect to database.  Please try again later.';
+  exit;
 }
 ?>
 <!DOCTYPE html>

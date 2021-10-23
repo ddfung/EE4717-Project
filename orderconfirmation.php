@@ -1,35 +1,13 @@
 <?php
-session_start();
-  if (isset($_GET['id'])){
-    $subjectId  = $_GET['id'];
+    session_start();
+    $id=session_id();
     
-  // Establish connection with DB
-  @ $db = new mysqli('localhost', 'f32ee', 'f32ee', 'f32ee');
-  if (mysqli_connect_errno()) {
-    echo 'Error: Could not connect to database.  Please try again later.';
-    exit;
-  }
-  // Fetch row of shoe data using id
-  $query = "SELECT * FROM shoes_table WHERE product_id = $subjectId";
-  $result = $db->query($query);
-  $row = $result->fetch_assoc();
-
   // Check for cart items
   if (!isset($_SESSION['cart'])) {
     $_SESSION['cart'] = array();
   }
-  if ($_POST['quantity']) {
-    $_SESSION['cart'][] = ['product_id'=>$subjectId, 'name'=>$row['name'], 'price'=>$row['price'], 'quantity'=>$_POST['quantity']] ;
-  }
-
   print_r($_SESSION['cart']);
 
-}else{
-  echo "provide Id";
-}
-session_destroy();
-?>
-<?php
 //create short variables
 $customer_name=$_POST['customer_name'];
 $customer_email=$_POST['email'];
@@ -52,18 +30,32 @@ if (!$customer_name || !$customer_email || !$customer_contact || !$customer_addr
     //insert query results
     if ($result) {
       echo  $db->affected_rows." book inserted into database.";
+          
+      // Get the last index in the log to be assigned the order_id, push order into orders-details
+      $queryLastIndex = "SELECT MAX( customer_id ) FROM `customers_table`;";
+      echo $queryLastIndex;
+      $lastIndex = $db->query($queryLastIndex);
+      $row = $lastIndex->fetch_assoc();
+      $lastIndex = $row['MAX( customer_id )'];
+      echo ( $lastIndex);
       
     } else {
       echo "An error has occurred.  The item was not added.";
     }
-    $db->close();
-?>
-<?php
-@ $db = new mysqli('localhost', 'f32ee', 'f32ee', 'f32ee');
-    if(mysqli_connect_errno()){
-        echo 'Error: Could not connect to database.  Please try again later.';
-	exit;
+
+    // Assigns KV pair for items in cart
+    foreach ($_SESSION['cart'] as $key=>$value) {
+      $product_id = $value['product_id'];
+      $size = $value['size'];
+      $quantity = $value['quantity'];
+
+      $query = "INSERT INTO order_items values
+            ($lastIndex,'".$product_id."', '".$size."', '".$quantity."')";
+      $result = $db->query($query); //query submission
+      echo  $db->affected_rows." book inserted into database.";
+
     }
+
     // Combine 2 tables to one with customer_id=order_id
     $query="SELECT order_items.*, customers_table.*, shoes_table.product_id, shoes_table.name 
     FROM shoes_table INNER JOIN order_items
@@ -98,10 +90,7 @@ if (!$customer_name || !$customer_email || !$customer_contact || !$customer_addr
         array_push($item_size,$row['size']);        
         array_push($item_quantity,$row['quantity']);            
     }
-    print_r($item_names);
-    print_r($item_size);
-    print_r($item_quantity);
-    
+    session_destroy();
 ?>
 <!DOCTYPE html>
 <html lang="en">

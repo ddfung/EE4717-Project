@@ -6,10 +6,6 @@
   if (!isset($_SESSION['cart'])) {
     $_SESSION['cart'] = array();
   }
-  if ($_POST['quantity']) {
-    $_SESSION['cart'][] = ['product_id'=>$subjectId, 'name'=>$row['name'], 'price'=>$row['price'], 'quantity'=>$_POST['quantity']] ;
-  }
-
   print_r($_SESSION['cart']);
 ?>
 <!DOCTYPE html>
@@ -36,7 +32,7 @@
               <a href="location.php">LOCATION</a>
             </span>
             <span class="nav-icon">
-            <a href="shoppingBag.html"
+            <a href="shoppingBag.php"
                 ><img id="shoppingBag" src="assets/shoppingBag/shoppingBag.png"/>
                 <div class="cart_items"><?php echo count($_SESSION['cart']) ?></div>
               </a>

@@ -1,19 +1,6 @@
 <?php
-session_start();
-  if (isset($_GET['id'])){
-    $subjectId  = $_GET['id'];
+  session_start();
     
-  // Establish connection with DB
-  @ $db = new mysqli('localhost', 'f32ee', 'f32ee', 'f32ee');
-  if (mysqli_connect_errno()) {
-    echo 'Error: Could not connect to database.  Please try again later.';
-    exit;
-  }
-  // Fetch row of shoe data using id
-  $query = "SELECT * FROM shoes_table WHERE product_id = $subjectId";
-  $result = $db->query($query);
-  $row = $result->fetch_assoc();
-
   // Check for cart items
   if (!isset($_SESSION['cart'])) {
     $_SESSION['cart'] = array();
@@ -21,13 +8,14 @@ session_start();
   if ($_POST['quantity']) {
     $_SESSION['cart'][] = ['product_id'=>$subjectId, 'name'=>$row['name'], 'price'=>$row['price'], 'quantity'=>$_POST['quantity']] ;
   }
-
   print_r($_SESSION['cart']);
-  
 
-}else{
-  echo "provide Id";
-}
+  if (isset($_GET['delete'])) {
+    $_SESSION['subtotal'] -= $_SESSION['cart'][$_GET['delete']]['price'];
+    unset($_SESSION['cart'][$_GET['delete']]);
+    header('location: ' . $_SERVER['PHP_SELF']);
+    exit();
+  }  
 ?>
 
 <!DOCTYPE html>
@@ -63,54 +51,44 @@ session_start();
       </nav>
     <main>
         <h2>SHOPPING CART</h2>
-        <div id="cartWrapper">
-            <table class="cartTable">
-                <tr>
-                    <td></td>
-                    <th>ITEM</th>
-                    <th>SIZE</th>
-                    <th>QTY</th>
-                    <th>PRICE</th>
-                </tr>
-                <tr>
-                    <td><img id="shoe" src="assets/slideshowImage/slideshow1.png"></td>
-                    <td>Nike Air Force 1</td> 
-                    <td>US 9</td>
-                    <td><div class="quantity buttons_added">
-                        <input 
-                            type="number" 
-                            step="1" 
-                            min="0" 
-                            value="1" 
-                            title="Qty" 
-                            size="3">
-                    </div></td>
-                    <td>$150</td>
-                    <td><img id="delete" src="assets/shoppingBag/trash.png"></td>
-                </tr>
-                <tr>
-                    <td><img id="shoe" src="assets/slideshowImage/slideshow2.png"></td>
-                    <td>Adidas Stan Smith</td> 
-                    <td>US 9</td>
-                    <td><div class="quantity buttons_added">
-                        <input 
-                            type="number" 
-                            step="1" 
-                            min="0" 
-                            value="1" 
-                            title="Qty" 
-                            size="3">
-                    </div></td>
-                    <td>$140</td>
-                    <td><img id="delete" src="assets/shoppingBag/trash.png"></td>
-                </tr>
-          </table>
-        </div>
-        <hr class="solid"><br>            
-        <span class="cartTotal">SUBTOTAL: $290</span><br><br><br><br>
-        <a href="userInfo.php"><button id="checkoutBtn" >CHECKOUT</button></a>
-        <a href="index.php"><button id="backBtn">BACK TO SHOPPING</button></a>
-        <!-- onclick="history.back(-1)" -->
+          <?php
+          if ($_SESSION['cart']) {
+              echo "<form action='userInfo.php' method='POST'>";
+              echo "<div id='cartWrapper'>
+                      <table class='cartTable'>
+                          <tr>
+                            <td></td>
+                            <th>ITEM</th>
+                            <th>SIZE</th>
+                            <th>QTY</th>
+                            <th>PRICE</th>
+                          </tr>";
+                  $subtotal = 0;
+                  foreach ($_SESSION['cart'] as $key=>$value) {
+                    $total = $value['price'] * $value['quantity'];
+                    echo "<tr>
+                            <td><img id='shoe' src='assets/productPage/{$value['shoe_img']}' width='300px' ></td>
+                            <td>{$value['name']}</td> 
+                            <td>{$value['size']}</td>
+                            <td><div class='quantity buttons_added'>
+                              <input type='number' step='1' min='0' value='{$value['quantity']}' title='Qty' size='3' name='quantity'>
+                            </div></td>
+                            <td>\$$total</td>
+                            <td><a href='{$_SERVER['PHP_SELF']}?delete=$key'><img id='delete' src='assets/shoppingBag/trash.png'></a></td>
+                          </tr>";
+                    $subtotal = $subtotal + ($value['price'] * $value['quantity']);
+                  } 
+              echo "</table>";
+              echo "</div>";
+              echo "<hr class='solid'><br>";
+              echo "<span class='cartTotal'>SUBTOTAL: \$$subtotal </span><br><br><br><br>";
+              echo "</form>";
+              echo "<a href='userInfo.php'><button id='checkoutBtn'>CHECKOUT</button></a>";
+              echo "<a href='index.php'><button id='backBtn'>BACK TO SHOPPING</button></a>";
+          } else {
+            echo "Oops! Looks like your cart is empty!";
+          }
+          ?>
     </main>
 </div>
 </body>
