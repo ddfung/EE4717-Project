@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Oct 22, 2021 at 03:50 PM
+-- Generation Time: Oct 23, 2021 at 10:05 PM
 -- Server version: 5.5.62-0ubuntu0.14.04.1
 -- PHP Version: 5.5.9-1ubuntu4.29
 
@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 CREATE TABLE IF NOT EXISTS `order_items` (
   `order_id` int(10) unsigned NOT NULL,
   `product_id` int(10) unsigned NOT NULL,
-  `size` int(10) unsigned NOT NULL,
+  `size` text NOT NULL,
   `quantity` int(10) unsigned NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -38,16 +38,13 @@ CREATE TABLE IF NOT EXISTS `order_items` (
 --
 
 INSERT INTO `order_items` (`order_id`, `product_id`, `size`, `quantity`) VALUES
-(1, 2, 8, 2),
-(1, 3, 9, 1),
-(2, 6, 7, 1),
-(2, 7, 8, 2),
-(3, 5, 6, 3),
-(4, 2, 8, 1),
-(4, 6, 9, 1),
-(4, 5, 7, 3),
-(4, 8, 7, 2),
-(4, 1, 8, 4);
+(2, 2, 'US 9', 1),
+(2, 5, 'US 7', 3),
+(2, 6, 'US 8', 2),
+(3, 1, 'US 9', 1),
+(3, 6, 'US 9', 1),
+(3, 7, 'US 9', 1),
+(3, 4, 'US 7', 3);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
