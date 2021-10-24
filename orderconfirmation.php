@@ -90,6 +90,15 @@ if (!$customer_name || !$customer_email || !$customer_contact || !$customer_addr
         array_push($item_size,$row['size']);        
         array_push($item_quantity,$row['quantity']);            
     }
+    $to      = 'f32ee@localhost';
+    $subject = 'Order Confirmed!';
+    $message = 'Greetings from DAMES. Your order has been placed and confirmed!';
+    $headers = 'From: f32ee@localhost' . "\r\n" .
+        'Reply-To: f32ee@localhost' . "\r\n" .
+        'X-Mailer: PHP/' . phpversion();
+
+    mail($to, $subject, $message, $headers,'-ff32ee@localhost');
+    echo ("mail sent to : ".$to);
     session_destroy();
 ?>
 <!DOCTYPE html>
@@ -125,7 +134,7 @@ if (!$customer_name || !$customer_email || !$customer_contact || !$customer_addr
         </b>
       </nav>
       <main>
-        <h2>Order Confirmation</h2>
+        <h2>ORDER CONFIRMATION</h2>
         <table class="orderconfirmTable">
           <tr>
             <th>Order ID: </th>
