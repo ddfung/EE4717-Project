@@ -65,18 +65,19 @@
                           </tr>";
                   $subtotal = 0;
                   foreach ($_SESSION['cart'] as $key=>$value) {
-                    $total = $value['price'] * $value['quantity'];
+                      $total = $value['price'] * $value['quantity'];
                     echo "<tr>
                             <td><img id='shoe' src='assets/productPage/{$value['shoe_img']}' width='300px' ></td>
                             <td>{$value['name']}</td> 
                             <td>{$value['size']}</td>
                             <td><div class='quantity buttons_added'>
-                              <input type='number' step='1' min='0' value='{$value['quantity']}' title='Qty' size='3' name='quantity'>
+                              <input type='number' step='1' min='1' value='{$value['quantity']}' size='3' name='quantity' id='quantity' onchange='computeTotal()'>
+                              <input type='hidden' id='itemPrice' value='{$value['price']}'>
                             </div></td>
-                            <td>\$$total</td>
+                            <td><label id='itemCost'>\$$total</td>
                             <td><a href='{$_SERVER['PHP_SELF']}?delete=$key'><img id='delete' src='assets/shoppingBag/trash.png'></a></td>
                           </tr>";
-                    $subtotal = $subtotal + ($value['price'] * $value['quantity']);
+                    $subtotal = $subtotal + $total;
                   } 
               echo "</table>";
               echo "</div>";
@@ -86,7 +87,7 @@
               echo "<a href='userInfo.php'><button id='checkoutBtn'>CHECKOUT</button></a>";
               echo "<a href='index.php'><button id='backBtn'>BACK TO SHOPPING</button></a>";
           } else {
-            echo "Oops! Looks like your cart is empty!";
+            echo "<div align='center' style='font-size: 18px;'>Oops! Looks like your cart is empty!</div>";
           }
           ?>
     </main>
@@ -117,4 +118,5 @@
         </div>
      </div>
 </footer>
+<script type="text/javascript" src="cartCalculator.js"></script>
 </html>
