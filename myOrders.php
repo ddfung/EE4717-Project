@@ -6,7 +6,34 @@
   if (!isset($_SESSION['cart'])) {
     $_SESSION['cart'] = array();
   }
-  print_r($_SESSION['cart']);
+  // print_r($_SESSION['cart']);
+
+  @ $db = new mysqli('localhost','f32ee','f32ee','f32ee');
+    if(mysqli_connect_errno()){
+        echo 'Error: Could not connect to database.  Please try again later.';
+	  exit;
+    }
+
+  $order_id = $_POST['order_id'];
+
+  $query="SELECT order_items.*, 
+  shoes_table.product_id, shoes_table.name
+  FROM shoes_table INNER JOIN order_items
+  ON order_items.product_id = shoes_table.product_id
+  WHERE order_items.order_id = $order_id
+  ";
+  $result = $db -> query($query); //query submission
+  $num_results = $result->num_rows; //retrieve num of rows in result set    
+  $item_names = array();
+  $item_size = array();
+  $item_quantity = array();  
+  for ($j=0; $j <$num_results; $j++){
+      $row = $result->fetch_assoc();        
+      array_push($item_names,$row['name']);        
+      array_push($item_size,$row['size']);        
+      array_push($item_quantity,$row['quantity']);            
+  }
+  print_r()
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -42,15 +69,43 @@
       </nav>
     <main>
         <h2>MY ORDERS</h2>
-            <label for="fname"><i class="fa fa-user"></i> Order ID</label>
-            <input type="text" id="fname" name="orderid" placeholder="John M. Doe">
-          <!-- <div class="cardLayout">
-            <?php
-              $category='men';
-              include 'shoeCard.php';
-            ?>
-          </div> -->
-    </main>
+        <form action="myOrders.php" method="POST">
+            <div align='center'><label></i> Order ID</label>
+            <input type="number" id="order_id" name="order_id" placeholder="Enter Order_id"></div><br><br>
+            <div class='submitinfoBtn'><input type="submit" id="submitinfoBtn" name="submit" value="Submit" /></div>
+        </form>
+        <?php 
+          if ($order_id) {
+            echo "<table class='itemsorderedTable'>
+              <tr>
+                <th style='font-size:x-large' colspan='4'>Items Ordered</th>
+              </tr>          
+              <tr>
+                <th colspan='2'>Items Name</th>                  
+              <th>Size</th>         
+              <th>Quantity</th>
+              </tr>";                   
+              echo "<tr>
+                <td colspan='2'>"; 
+                  foreach($item_names as $key=>$val)
+                echo "{$val}<br><br>";
+                echo "</td>";
+                echo "<td>"; 
+                  foreach($item_size as $key=>$val)
+                echo "{$val}<br><br>";
+                echo "</td>";
+                echo "<td>"; 
+                  foreach($item_quantity as $key=>$val)
+                echo "{$val}<br><br>";
+                echo "</td>
+              </tr>
+              <tr>
+                <td colspan='4'style='font-size: 18px'><b>Order Status:</b> Reached local sorting facility</td>
+              </tr>        
+            </table>";
+          }
+        ?>
+          </main>
 </div>
 </body>
 <footer>
