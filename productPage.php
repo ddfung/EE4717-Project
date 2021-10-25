@@ -19,12 +19,8 @@ session_start();
     $_SESSION['cart'] = array();
   }
   if ($_POST['quantity']) {
-    $_SESSION['cart'][] = ['product_id'=>$subjectId, 'shoe_img'=>$_POST['shoe_img'], 'name'=>$row['name'], 'size'=>$_POST['size'], 'price'=>$row['price'], 'quantity'=>$_POST['quantity']] ;
+    $_SESSION['cart'][] = ['product_id'=>$subjectId, 'shoe_img'=>$row['img_diagonal'], 'name'=>$row['name'], 'color'=>$row['color'], 'size'=>$_POST['size'], 'price'=>$row['price'], 'quantity'=>$_POST['quantity']] ;
   }
-
-  print_r($_SESSION['cart']);
-
-
 }else{
   echo "provide Id";
 }
@@ -179,20 +175,7 @@ session_start();
                 <input type="number" name="quantity" step="1" min="0" value="1" title="Qty" size="3"/>
               </div>
               <br /><br />
-              <!-- Trigger/Open The Modal -->
-              <!-- <button id="myBtn">Add to Cart</button> -->
-              <!-- The Modal -->
-              <!-- <div id="myModal" class="modal"> -->
-                <!-- Modal content -->
-                <!-- <div class="modal-content">
-                  <span class="close">&times;</span>
-                  <p>Item has been added to Cart.</p>
-                </div>
-              </div>
-              <script type="text/javascript" src="modal cart.js"></script> -->
-              <input type="hidden" id="shoe_img" name="shoe_img" value="<?php echo $row['img_diagonal'] ?>">
-
-              <input type="submit" value="Add to Cart">
+              <input type="submit" id="addToCartBtn" value="Add to Cart">
             </form>
           </div>
         </div>

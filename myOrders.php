@@ -33,7 +33,10 @@
       array_push($item_size,$row['size']);        
       array_push($item_quantity,$row['quantity']);            
   }
-  print_r()
+
+  date_default_timezone_set("Asia/Singapore");
+  $todaysDate = date("Y-m-d");
+  $deliveryDate = date('Y-m-d', strtotime($Date. ' + 3 days'));
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -72,13 +75,13 @@
         <form action="myOrders.php" method="POST">
             <div align='center'><label></i> Order ID</label>
             <input type="number" id="order_id" name="order_id" placeholder="Enter Order_id"></div><br><br>
-            <div class='submitinfoBtn'><input type="submit" id="submitinfoBtn" name="submit" value="Submit" /></div>
-        </form>
+            <div class='submitinfoBtn' align='center'><input type="submit" id="submitinfoBtn" name="submit" value="Submit" /></div>
+        </form><br><br><br>
         <?php 
           if ($order_id) {
             echo "<table class='itemsorderedTable'>
               <tr>
-                <th style='font-size:x-large' colspan='4'>Items Ordered</th>
+                <th style='font-size:x-large;background-color:#e8e8e8' colspan='4'>Items Ordered</th>
               </tr>          
               <tr>
                 <th colspan='2'>Items Name</th>                  
@@ -100,8 +103,9 @@
                 echo "</td>
               </tr>
               <tr>
-                <td colspan='4'style='font-size: 18px'><b>Order Status:</b> Reached local sorting facility</td>
-              </tr>        
+                <td colspan='2'style='font-size: 18px'><b>Order Status:</b> Reached local sorting facility.</td>
+                <td colspan='2'style='font-size: 18px'><b>Estimated delivery:</b> {$deliveryDate}</td>
+                </tr>        
             </table>";
           }
         ?>

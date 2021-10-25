@@ -9,8 +9,6 @@
   if ($_POST['quantity']) {
     $_SESSION['cart'][] = ['product_id'=>$subjectId, 'name'=>$row['name'], 'price'=>$row['price'], 'quantity'=>$_POST['quantity']] ;
   }
-
-  print_r($_SESSION['cart']);
 ?>
 <!DOCTYPE html>
 <html lang="en">

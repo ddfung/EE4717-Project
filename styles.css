@@ -14,6 +14,38 @@ h1 {
   text-align: center;
 }
 
+body {
+  background-size: cover;
+  margin: auto;
+  background-color: #ffffff;
+  font-size: 13px;
+  width: 90%;
+  font-family: Helvetica;
+  min-width: 800px;
+}
+
+footer {
+  background-color: #e8e8e8;
+  font-size: 11px;
+  font-style: italic;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+#wrapper {
+  background-color: #ffffff;
+}
+
+head,
+footer,
+#wrapper {
+  margin-left: 40px;
+  margin-right: 40px;
+  box-shadow: 0px 2px 5px #bbbfca;
+  color: #000000;
+}
+
 nav {
   background-color: #bbbfca;
   font-weight: bold;
@@ -203,10 +235,6 @@ h2 {
 .productpage-row {
   display: flex;
   margin: 0%;
-  /* flex-wrap: wrap; */
-  /* align-items: center; */
-  /* justify-content: center; */
-  /* padding: 0px; */
 }
 
 .productpage-column-left {
@@ -228,51 +256,16 @@ h2 {
   width: auto;
 }
 
-#myBtn {
-  background-color: #495464;
-  padding: 10px;
-  font-size: 15px;
-  border-radius: 3px;
-  color: #ffffff;
-}
-
-/* The Modal (background) */
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  padding-top: 100px; /* Location of the box */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0, 0, 0); /* Fallback color */
-  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
-}
-
-/* Modal Content */
-.modal-content {
-  background-color: #fefefe;
-  margin: auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%;
-}
-
-/* The Close Button */
-.close {
-  color: #aaaaaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-  color: #000;
-  text-decoration: none;
+#addToCartBtn {
+  width: 100px;
+  background-color: grey;
+  color: white;
+  padding: 15px 10px;
+  border: none;
+  border-radius: 4px;
   cursor: pointer;
+  text-align: center; 
+  font-weight: bold;
 }
 
 /* ------------- SHOPPING BAG ------------- */
@@ -291,13 +284,15 @@ h2 {
 .cartTable th {
   justify-content: start;
   text-align: start;
-  font-size: 20px;
+  font-size: 22px;
+  background-color: #e8e8e8;
 }
 
 .cartTable td {
   justify-content: start;
   text-align: start;
   font-size: 18px;
+  font-weight: bold;
 }
 
 #delete {
@@ -318,23 +313,33 @@ hr.solid {
 }
 
 #checkoutBtn {
-  background-color: #495464;
-  padding: 10px;
-  font-size: 15px;
-  border-radius: 3px;
-  color: #ffffff;
   float: right;
   margin-right: 75px;
+  width: 15%;
+  background-color: grey;
+  color: white;
+  padding: 15px 10px;
+  margin: 0 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: center;
+  font-weight: bold;
 }
 
 #backBtn {
-  background-color: #495464;
-  padding: 10px;
-  font-size: 15px;
-  border-radius: 3px;
-  color: #ffffff;
   float: right;
-  margin-right: 40px;
+  margin-right: 75px;
+  width: 15%;
+  background-color: grey;
+  color: white;
+  padding: 15px 10px;
+  margin: 0  20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: center; 
+  font-weight: bold;
 }
 
 /* ------------- ORDER CONFIRMATION ------------- */
@@ -359,7 +364,7 @@ hr.solid {
 }
 
 .orderconfirmTable input {
-	width: 80%;
+	width: 250px;
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
@@ -372,33 +377,41 @@ hr.solid {
 	font-size: larger;
 }
 
-.submitinfoBtn{
-  text-align: center;
-}
-
-#submitDeliveryInfoBtn {
-  width: 30%;
+#submitinfoBtn{
+  width: 150px;
   background-color: grey;
   color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
+  padding: 15px 10px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  text-align: center;  
+  text-align: center; 
+  font-weight: bold;
+}
+
+#submitDeliveryInfoBtn {
+  width: 150px;
+  background-color: grey;
+  color: white;
+  padding: 15px 10px;
+  border: none;
+  border-radius: 4px;
+  margin-inline: 15px;
+  cursor: pointer;
+  text-align: center; 
+  font-weight: bold;
 }
 
 .itemsorderedTable{  
   margin: auto;
-	width: 100%;
+	width: 80%;
 	table-layout: fixed;
-  /* border: thick; */
 }
 
 .itemsorderedTable th {
   text-align: center;
   font-size: larger;
-  padding:20px;  
+  padding:20px;
 }
 
 .itemsorderedTable td {
@@ -427,41 +440,8 @@ hr.solid {
 
 .locationTable td {
   width: 70%;
-  padding-left: 20px;
-}
-
-body {
-  background-size: cover;
-  /* background-image: url('https://images.unsplash.com/photo-1600269452121-4f2416e55c28?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2265&q=80'); */
-  margin: auto;
-  background-color: #ffffff;
-  font-size: 13px;
-  width: 90%;
-  font-family: Helvetica;
-  min-width: 800px;
-}
-
-footer {
-  /* background-image: url('https://images.unsplash.com/photo-1600269452121-4f2416e55c28?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2265&q=80'); */
-  background-color: #e8e8e8;
-  font-size: 11px;
-  font-style: italic;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  margin-bottom: 20px;
-}
-
-#wrapper {
-  background-color: #ffffff;
-}
-
-head,
-footer,
-#wrapper {
-  margin-left: 40px;
-  margin-right: 40px;
-  box-shadow: 0px 2px 5px #bbbfca;
-  color: #000000;
+  padding-left: 100px;
+  padding-right: 100px;
 }
 
 * {
@@ -559,32 +539,6 @@ footer,
   background-color: #717171;
 }
 
-/* Fading animation
-.fade {
-  -webkit-animation-name: fade;
-  -webkit-animation-duration: 1.5s;
-  animation-name: fade;
-  animation-duration: 1.5s;
-}
-
-@-webkit-keyframes fade {
-  from {
-    opacity: 0.4;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes fade {
-  from {
-    opacity: 0.4;
-  }
-  to {
-    opacity: 1;
-  }
-} */
-
 /* Slideshow container */
 .productPage-slideshow-container {
   max-width: 650px;
@@ -595,23 +549,6 @@ footer,
 .cursor {
   cursor: pointer;
 }
-
-/* Next & previous buttons */
-/* .prev,
-  .next {
-    cursor: pointer;
-    position: absolute;
-    top: 40%;
-    width: auto;
-    padding: 16px;
-    margin-top: -50px;
-    color: white;
-    font-weight: bold;
-    font-size: 20px;
-    border-radius: 0 3px 3px 0;
-    user-select: none;
-    -webkit-user-select: none;
-  } */
 
 /* Number text (1/3 etc) */
 .numbertext {

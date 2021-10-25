@@ -6,7 +6,6 @@
   if (!isset($_SESSION['cart'])) {
     $_SESSION['cart'] = array();
   }
-  print_r($_SESSION['cart']);
 
 //create short variables
 $customer_name=$_POST['customer_name'];
@@ -92,7 +91,7 @@ if (!$customer_name || !$customer_email || !$customer_contact || !$customer_addr
     }
     $to      = 'f32ee@localhost';
     $subject = 'Order Confirmed!';
-    $message = 'Greetings from DAMES. Your order has been placed and confirmed!';
+    $message = "Greetings from DAMES. Your order has been placed and confirmed! \nOrder Id: {$lastIndex}. Order id can be used to track the status of your package under the myOrders page.";
     $headers = 'From: f32ee@localhost' . "\r\n" .
         'Reply-To: f32ee@localhost' . "\r\n" .
         'X-Mailer: PHP/' . phpversion();
@@ -159,7 +158,7 @@ if (!$customer_name || !$customer_email || !$customer_contact || !$customer_addr
         </table>
         <table class='itemsorderedTable'>
           <tr>
-            <th style='font-size:x-large' colspan='4'>Items Ordered</th>
+            <th style='font-size:x-large;background-color:#e8e8e8' colspan='4'>Items Ordered</th>
           </tr>          
           <tr>
             <th colspan='2'>Items Name</th>                  
@@ -182,7 +181,6 @@ if (!$customer_name || !$customer_email || !$customer_contact || !$customer_addr
       </main>
     </div>
   </body>
-  <!-- <script type="text/javascript" src="productPageSlideGallery.js"></script> -->
   <footer>
     <div class="flex-row-container">
       <div class="flex-row-item1">

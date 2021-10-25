@@ -4,8 +4,6 @@ if (!isset($_SESSION['cart'])) {
   $_SESSION['cart'] = array();
 }
 
-print_r($_SESSION['cart']);
-
 // stablish connection with DB
 @ $db = new mysqli('localhost', 'f32ee', 'f32ee', 'f32ee');
 if (mysqli_connect_errno()) {
@@ -47,7 +45,7 @@ if (mysqli_connect_errno()) {
     <main>
         <h2>DELIVERY INFO</h2>
         <form action="orderconfirmation.php" method="POST">
-        <table class="orderconfirmTable">
+        <table class="orderconfirmTable" align='center'>
           <tr>
             <th><label>Customer Name:</label></th>
             <td><input
@@ -92,9 +90,9 @@ if (mysqli_connect_errno()) {
               required
             /></td>
           </tr>          
-        </table>         
-          <div class='submitinfoBtn'><input type="submit" id="submitDeliveryInfoBtn" name="submit" value="Submit" /></div>
-          <div class='submitinfoBtn'><input type="reset" id="submitDeliveryInfoBtn" name="clear" value="Clear" /></div>          
+        </table><br><br>        
+          <div class='submitinfoBtn' align='center'><input type="submit" id="submitDeliveryInfoBtn" name="submit" value="Submit" />
+          <input type="reset" id="submitDeliveryInfoBtn" name="clear" value="Clear" /></div>          
         </form>
     </main>
 </div>

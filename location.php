@@ -6,7 +6,6 @@
   if (!isset($_SESSION['cart'])) {
     $_SESSION['cart'] = array();
   }
-  print_r($_SESSION['cart']);
 ?>
 <!DOCTYPE html>
 <html lang="en">

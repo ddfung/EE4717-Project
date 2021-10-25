@@ -8,7 +8,6 @@
   if ($_POST['quantity']) {
     $_SESSION['cart'][] = ['product_id'=>$subjectId, 'name'=>$row['name'], 'price'=>$row['price'], 'quantity'=>$_POST['quantity']] ;
   }
-  print_r($_SESSION['cart']);
 
   if (isset($_GET['delete'])) {
     $_SESSION['subtotal'] -= $_SESSION['cart'][$_GET['delete']]['price'];
@@ -68,13 +67,13 @@
                       $total = $value['price'] * $value['quantity'];
                     echo "<tr>
                             <td><img id='shoe' src='assets/productPage/{$value['shoe_img']}' width='300px' ></td>
-                            <td>{$value['name']}</td> 
+                            <td>{$value['name']}\n<div style='color:grey;font-size:16px'>{$value['color']} </div></td> 
                             <td>{$value['size']}</td>
                             <td><div class='quantity buttons_added'>
                               <input type='number' step='1' min='1' value='{$value['quantity']}' size='3' name='quantity' id='quantity' onchange='computeTotal()'>
                               <input type='hidden' id='itemPrice' value='{$value['price']}'>
                             </div></td>
-                            <td><label id='itemCost'>\$$total</td>
+                            <td>\$<label id='itemCost'>$total</td>
                             <td><a href='{$_SERVER['PHP_SELF']}?delete=$key'><img id='delete' src='assets/shoppingBag/trash.png'></a></td>
                           </tr>";
                     $subtotal = $subtotal + $total;
