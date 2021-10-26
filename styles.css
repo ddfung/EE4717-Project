@@ -286,6 +286,7 @@ h2 {
   text-align: start;
   font-size: 22px;
   background-color: #e8e8e8;
+  min-width: 100px;
 }
 
 .cartTable td {
@@ -431,7 +432,13 @@ hr.solid {
 #map {
   height: 220px;
   width: 370px;
-  padding-right: 20px;
+}
+
+.locationTable {
+  margin: auto;
+	width: 85%;
+	table-layout: fixed;
+  font-family: Helvetica,Arial,sans-serif;
 }
 
 .locationTable th {
@@ -440,8 +447,7 @@ hr.solid {
 
 .locationTable td {
   width: 70%;
-  padding-left: 100px;
-  padding-right: 100px;
+  align-items: center;
 }
 
 * {
