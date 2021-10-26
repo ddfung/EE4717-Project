@@ -155,10 +155,10 @@ session_start();
           </div>
           <div class="productpage-column-right">
             <h4 class="product-title"><?php echo $row['name'] ?></h4>
-            <p class="product-description"><?php echo $row['description'] ?></p>
+            <p class="product-description"><?php echo $row['description'] ?><br></p>
             <span class="product-color"><?php echo $row['color'] ?></span><br /><br />
-            <span class="product-price">$<?php echo $row['price'] ?></span><br /><br />
-            <span class="product-color">Size</span><br /><br />
+            <span class="product-price">S$<?php echo $row['price'] ?></span><br /><br />
+            <span class="product-size">Size</span><br /><br />
             <form action="productPage.php?id=<?php echo $subjectId ?>" method="POST">
                 <div class="buttongroup">  
                   <?php
@@ -170,9 +170,9 @@ session_start();
                   ?>
                 </div>
               <br /><br />
-              <span class="product-color">Quantity</span><br />
+              <span class="product-size">Quantity</span><br />
               <div class="quantity buttons_added">
-                <input type="number" name="quantity" step="1" min="0" value="1" title="Qty" size="3"/>
+                <input type="number" id='order_id' name="quantity" step="1" min="0" value="1" title="Qty" size="3"/>
               </div>
               <br /><br />
               <input type="submit" id="addToCartBtn" value="Add to Cart">

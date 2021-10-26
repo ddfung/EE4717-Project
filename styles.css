@@ -85,7 +85,8 @@ nav a:visited {
   color: #000000;
 }
 nav a:hover {
-  color: rgb(235, 148, 48);
+  color:rgb(82, 80, 80);
+  text-decoration: underline;
 }
 
 #shoppingBag {
@@ -207,11 +208,20 @@ h2 {
   font-size: 20px;
   font-weight: bold;
   font-family: Helvetica, Arial, sans-serif;
+  color: grey;
+  padding-bottom: 10px;
+}
+
+.product-size {
+  font-size: 20px;
+  font-weight: bold;
+  font-family: Helvetica, Arial, sans-serif;
+  color: black;
 }
 
 .product-price {
   font-size: 30px;
-  color: grey;
+  color: rgb(82, 82, 82);
   padding: 15px 0px;
 }
 
@@ -583,13 +593,18 @@ hr.solid {
 
 /* ------------- SIZE BUTTONS ------------- */
 .buttongroup label{
-  border: 1px solid #fff;
   padding: 10px 16px;  
   cursor: pointer;
   color: #fff;
   background-color: #777;
   transition: all 0.2s;
   border-radius: 5%;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin: 2px;
+  font-size: 14px;
 }
 
 .buttongroup label:not(:first-of-type){
@@ -607,5 +622,15 @@ input[name='size']{
 
 /* The checked buttons label style */
 input[name='size']:checked+label{
-  background-color: #ed6b06;
-} 
+  background-color: rgb(20, 20, 20);
+}
+
+#order_id{
+  width: 200px;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
