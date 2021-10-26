@@ -172,7 +172,7 @@ session_start();
               <br /><br />
               <span class="product-size">Quantity</span><br />
               <div class="quantity buttons_added">
-                <input type="number" id='order_id' name="quantity" step="1" min="0" value="1" title="Qty" size="3"/>
+                <input type="number" id='qty_id' name="quantity" step="1" min="0" value="1" title="Qty" size="3" onchange="validateQty()">
               </div>
               <br /><br />
               <input type="submit" id="addToCartBtn" value="Add to Cart">
@@ -213,4 +213,5 @@ session_start();
       </div>
     </div>
   </footer>
+  <script type="text/javascript" src="validate.js"></script>
 </html>

@@ -27,6 +27,10 @@ function AlphabetSpace(string) {
   function singaporeNumber(string){
     return /^[0-9]+$/.test(string);   
   }
+
+  function checkQty(string) {
+    return /^[0-9]*$/.test(string);
+  }
   
   //for email domain to 2-4 extensions and last extension to have 2-3 characters
   function domainCheck(string) {
@@ -91,5 +95,16 @@ function AlphabetSpace(string) {
     } else {
       alert("Contact input is invalid. Try again");
       document.getElementById("phone").value = ""; //to clear input
+    }
+  }
+
+  function validateQty(){
+    let qtyInput = document.getElementById("qty_id").value;
+    // console.log(contactInput.length);
+    if (checkQty(qtyInput)) {
+        console.log("Quantity input is accepted");
+    } else {
+      alert("Quantity input is invalid. Try again");
+      document.getElementById("order_id").value = ""; //to clear input
     }
   }

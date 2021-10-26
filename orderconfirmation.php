@@ -28,15 +28,15 @@ if (!$customer_name || !$customer_email || !$customer_contact || !$customer_addr
     $result = $db->query($query); //query submission
     //insert query results
     if ($result) {
-      echo  $db->affected_rows." book inserted into database.";
+      // echo  $db->affected_rows." book inserted into database.";
           
       // Get the last index in the log to be assigned the order_id, push order into orders-details
       $queryLastIndex = "SELECT MAX( customer_id ) FROM `customers_table`;";
-      echo $queryLastIndex;
+      // echo $queryLastIndex;
       $lastIndex = $db->query($queryLastIndex);
       $row = $lastIndex->fetch_assoc();
       $lastIndex = $row['MAX( customer_id )'];
-      echo ( $lastIndex);
+      // echo ( $lastIndex);
       
     } else {
       echo "An error has occurred.  The item was not added.";
@@ -51,7 +51,7 @@ if (!$customer_name || !$customer_email || !$customer_contact || !$customer_addr
       $query = "INSERT INTO order_items values
             ($lastIndex,'".$product_id."', '".$size."', '".$quantity."')";
       $result = $db->query($query); //query submission
-      echo  $db->affected_rows." book inserted into database.";
+      // echo  $db->affected_rows." item inserted into database.";
 
     }
 
@@ -59,8 +59,7 @@ if (!$customer_name || !$customer_email || !$customer_contact || !$customer_addr
     $query="SELECT order_items.*, customers_table.*, shoes_table.product_id, shoes_table.name 
     FROM shoes_table INNER JOIN order_items
     ON order_items.product_id = shoes_table.product_id INNER JOIN customers_table 
-    ON order_items.order_id = customers_table.customer_id 
-    -- WHERE order_id IN (SELECT order_id FROM  
+    ON order_items.order_id = customers_table.customer_id     
     ";
     $result = $db -> query($query); //query submission
     $num_results = $result->num_rows; //retrieve num of rows in result set
@@ -97,7 +96,7 @@ if (!$customer_name || !$customer_email || !$customer_contact || !$customer_addr
         'X-Mailer: PHP/' . phpversion();
 
     mail($to, $subject, $message, $headers,'-ff32ee@localhost');
-    echo ("mail sent to : ".$to);
+    // echo ("mail sent to : ".$to);
     session_destroy();
 ?>
 <!DOCTYPE html>
@@ -126,7 +125,7 @@ if (!$customer_name || !$customer_email || !$customer_contact || !$customer_addr
             <span class="nav-icon">
               <a href="shoppingBag.php"
                 ><img id="shoppingBag" src="assets/shoppingBag/shoppingBag.png"/>
-                <div class="cart_items"><?php echo count($_SESSION['cart']) ?></div>
+                <div class="cart_items">0</div>
               </a>
             </span>
           </div>

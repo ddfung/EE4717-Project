@@ -15,6 +15,7 @@ h1 {
 }
 
 body {
+  background-image:url(https://images.unsplash.com/photo-1599839619722-39751411ea63?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=388&q=80);
   background-size: cover;
   margin: auto;
   background-color: #ffffff;
@@ -158,6 +159,7 @@ h2 {
   text-align: left;
   color: black;
   font-weight: bold;
+  font-size: 15px;
 }
 
 
@@ -199,7 +201,7 @@ h2 {
 #productshoe {
   margin-left: auto;
   margin-right: auto;
-  width: 600px;
+  width: 60-900px;
   justify-content: center;
   align-self: center;
 }
@@ -213,14 +215,14 @@ h2 {
 }
 
 .product-size {
-  font-size: 20px;
+  font-size: 22px;
   font-weight: bold;
   font-family: Helvetica, Arial, sans-serif;
   color: black;
 }
 
 .product-price {
-  font-size: 30px;
+  font-size: 28px;
   color: rgb(82, 82, 82);
   padding: 15px 0px;
 }
@@ -366,12 +368,14 @@ hr.solid {
 	padding: 20px;
   padding-right: 30px;
 	overflow: hidden;
+  font-size: 16px;
 }
 
 .orderconfirmTable td {
 	padding-left: 5px;
 	overflow: hidden;
   text-align: left;
+  font-size: 18px;
 }
 
 .orderconfirmTable input {
@@ -421,14 +425,15 @@ hr.solid {
 
 .itemsorderedTable th {
   text-align: center;
-  font-size: larger;
+  font-size: 20px;
   padding:20px;
 }
 
 .itemsorderedTable td {
   text-align: center;
   padding: 20px;
-  overflow: hidden;  
+  overflow: hidden; 
+  font-size: 18px; 
 }
 
 /* ------------- LOCATION ------------- */
@@ -604,13 +609,13 @@ hr.solid {
   color: #fff;
   background-color: #777;
   transition: all 0.2s;
-  border-radius: 5%;
+  border-radius: 10%;
   display: inline-block;
   border: 1px solid #ccc;
-  border-radius: 4px;
+  border-radius: 6px;
   box-sizing: border-box;
   margin: 2px;
-  font-size: 14px;
+  font-size: 17px;
 }
 
 .buttongroup label:not(:first-of-type){
@@ -631,6 +636,17 @@ input[name='size']:checked+label{
   background-color: rgb(20, 20, 20);
 }
 
+#qty_id{
+  width: 200px;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 20px;
+}
+
 #order_id{
   width: 200px;
   padding: 12px 20px;
@@ -639,4 +655,10 @@ input[name='size']:checked+label{
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
+  font-size: 15px;
+}
+
+#order_tag{
+  font-size: 15px;
+  padding-right: 10px;
 }
