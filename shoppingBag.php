@@ -69,11 +69,9 @@
                             <td><img id='shoe' src='assets/productPage/{$value['shoe_img']}' width='300px' ></td>
                             <td>{$value['name']}\n<div style='color:grey;font-size:16px'>{$value['color']} </div></td> 
                             <td>{$value['size']}</td>
-                            <td><div class='quantity buttons_added'>
-                              <input type='number' step='1' min='1' value='{$value['quantity']}' size='3' name='quantity' id='quantity' onchange='computeTotal()'>
-                              <input type='hidden' id='itemPrice' value='{$value['price']}'>
-                            </div></td>
+                            <td>{$value['quantity']}</td>
                             <td>\$<label id='itemCost'>$total</td>
+                            <input type='hidden' id='itemPrice' value='{$value['price']}'>
                             <td><a href='{$_SERVER['PHP_SELF']}?delete=$key'><img id='delete' src='assets/shoppingBag/trash.png'></a></td>
                           </tr>";
                     $subtotal = $subtotal + $total;
@@ -108,7 +106,7 @@
             <h3>Customer Service</h3><br>
             Tel: +65 6888 8888<br><br>
             Email: <a href="mailto:cakeshop4717@f34.com">Dames.4717@gmail.com</a><br><br>
-            <u>Track Your Order</u>
+            <u><a href="myOrders.php">Track Your Order</a></u>
         </div>
         <div class="flex-row-item3">
             <h3></h3><br>
