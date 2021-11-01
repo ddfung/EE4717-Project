@@ -1,7 +1,7 @@
 <?php
     session_start();
     $id=session_id();
-    
+    //test
   // Check for cart items
   if (!isset($_SESSION['cart'])) {
     $_SESSION['cart'] = array();
