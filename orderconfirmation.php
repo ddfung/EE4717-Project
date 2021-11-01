@@ -49,10 +49,9 @@ if (!$customer_name || !$customer_email || !$customer_contact || !$customer_addr
       $quantity = $value['quantity'];
 
       $query = "INSERT INTO order_items values
-            ($lastIndex,'".$product_id."', '".$size."', '".$quantity."')";
+            ($lastIndex,'".$product_id."', '".$size."', '".$quantity."',NOW())";
       $result = $db->query($query); //query submission
       // echo  $db->affected_rows." item inserted into database.";
-
     }
 
     // Combine 2 tables to one with customer_id=order_id
@@ -96,7 +95,6 @@ if (!$customer_name || !$customer_email || !$customer_contact || !$customer_addr
         'X-Mailer: PHP/' . phpversion();
 
     mail($to, $subject, $message, $headers,'-ff32ee@localhost');
-    // echo ("mail sent to : ".$to);
     session_destroy();
 ?>
 <!DOCTYPE html>
@@ -109,7 +107,7 @@ if (!$customer_name || !$customer_email || !$customer_contact || !$customer_addr
   <body>
     <div id="wrapper">
       <header>
-        <h1>DAMES.</h1>
+      <a href="index.php" id="header1"><h1>DAMES.</h1></a>
       </header>
       <nav>
         <b>
@@ -153,6 +151,10 @@ if (!$customer_name || !$customer_email || !$customer_contact || !$customer_addr
           <tr>
             <th>Address: </th>
             <td><?php echo $arr[$i-1]['address']?></td>
+          </tr>
+          <tr>
+            <th>Order Date & Time: </th>
+            <td><?php echo $arr[$i-1]['order_date']?></td>
           </tr>
         </table>
         <table class='itemsorderedTable'>

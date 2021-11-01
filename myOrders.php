@@ -23,20 +23,26 @@
   WHERE order_items.order_id = $order_id
   ";
   $result = $db -> query($query); //query submission
+  // print_r($result);
+  // echo "{$result}";
   $num_results = $result->num_rows; //retrieve num of rows in result set    
   $item_names = array();
   $item_size = array();
-  $item_quantity = array();  
+  $item_quantity = array();
+  $order_date= array();  
   for ($j=0; $j <$num_results; $j++){
       $row = $result->fetch_assoc();        
       array_push($item_names,$row['name']);        
       array_push($item_size,$row['size']);        
-      array_push($item_quantity,$row['quantity']);            
+      array_push($item_quantity,$row['quantity']);
+      
   }
-
   date_default_timezone_set("Asia/Singapore");
   $todaysDate = date("Y-m-d");
   $deliveryDate = date('Y-m-d', strtotime($Date. ' + 3 days'));
+
+  // $order_date = date('Y/m/d', $row['order_date']);
+  // print_r($order_date);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -48,7 +54,7 @@
 <body>
 <div id="wrapper">
     <header>   
-        <h1>DAMES.</h1>
+    <a href="index.php" id="header1"><h1>DAMES.</h1></a>
     </header> 
     <nav>
         <b>
@@ -101,6 +107,9 @@
                   foreach($item_quantity as $key=>$val)
                 echo "{$val}<br><br>";
                 echo "</td>
+              </tr>
+              <tr>
+              <td colspan='4'style='font-size: 18px'><b>Order Date:</b> {$row['order_date']}.</td>
               </tr>
               <tr>
                 <td colspan='2'style='font-size: 18px'><b>Order Status:</b> Reached local sorting facility.</td>
