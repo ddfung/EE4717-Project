@@ -90,7 +90,8 @@ if (!$customer_name || !$customer_email || !$customer_contact || !$customer_addr
     }
     $to      = 'f32ee@localhost';
     $subject = 'Order Confirmed!';
-    $message = "Greetings from DAMES. Your order has been placed and confirmed! \nOrder Id: {$lastIndex}. Order id can be used to track the status of your package under the myOrders page.";
+    $message = "Greetings from DAMES. Your order has been placed and confirmed! \nOrder Id: {$lastIndex}. 
+    \nYour order ID can be used to track the status of your package under the MY ORDERS page.";
     $headers = 'From: f32ee@localhost' . "\r\n" .
         'Reply-To: f32ee@localhost' . "\r\n" .
         'X-Mailer: PHP/' . phpversion();
