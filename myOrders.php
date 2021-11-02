@@ -80,7 +80,7 @@
         <h2>MY ORDERS</h2>
         <form action="myOrders.php" method="POST">
             <div align='center'id="order_tag"><label></i> Order ID  </label>
-            <input type="number" id="order_id" name="order_id" placeholder="Enter Order_id"></div><br><br>
+            <input type="number" id="order_id" step="1" min="0" name="order_id" placeholder="Enter Order_id"></div><br><br>
             <div class='submitinfoBtn' align='center'><input type="submit" id="submitinfoBtn" name="submit" value="Submit" /></div>
         </form><br><br><br>
         <?php 
