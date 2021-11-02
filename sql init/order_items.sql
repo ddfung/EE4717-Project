@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Oct 23, 2021 at 10:05 PM
+-- Generation Time: Nov 01, 2021 at 03:50 PM
 -- Server version: 5.5.62-0ubuntu0.14.04.1
 -- PHP Version: 5.5.9-1ubuntu4.29
 
@@ -30,21 +30,18 @@ CREATE TABLE IF NOT EXISTS `order_items` (
   `order_id` int(10) unsigned NOT NULL,
   `product_id` int(10) unsigned NOT NULL,
   `size` text NOT NULL,
-  `quantity` int(10) unsigned NOT NULL
+  `quantity` int(10) unsigned NOT NULL,
+  `order_date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `order_items`
 --
 
-INSERT INTO `order_items` (`order_id`, `product_id`, `size`, `quantity`) VALUES
-(2, 2, 'US 9', 1),
-(2, 5, 'US 7', 3),
-(2, 6, 'US 8', 2),
-(3, 1, 'US 9', 1),
-(3, 6, 'US 9', 1),
-(3, 7, 'US 9', 1),
-(3, 4, 'US 7', 3);
+INSERT INTO `order_items` (`order_id`, `product_id`, `size`, `quantity`, `order_date`) VALUES
+(1, 5, 'US 9', 1, '2021-11-01'),
+(1, 8, 'US 7', 1, '2021-11-01'),
+(2, 4, 'US 9', 1, '2021-11-01');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

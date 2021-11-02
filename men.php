@@ -17,7 +17,7 @@
 <body>
 <div id="wrapper">
     <header>   
-        <h1>DAMES.</h1>
+    <a href="index.php" id="header1"><h1>DAMES.</h1></a>
     </header> 
     <nav>
         <b>

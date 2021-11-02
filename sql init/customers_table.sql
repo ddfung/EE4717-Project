@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Oct 22, 2021 at 03:49 PM
+-- Generation Time: Nov 01, 2021 at 03:50 PM
 -- Server version: 5.5.62-0ubuntu0.14.04.1
 -- PHP Version: 5.5.9-1ubuntu4.29
 
@@ -33,17 +33,15 @@ CREATE TABLE IF NOT EXISTS `customers_table` (
   `phone` bigint(20) unsigned NOT NULL,
   `address` char(100) NOT NULL,
   PRIMARY KEY (`customer_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
 --
 -- Dumping data for table `customers_table`
 --
 
 INSERT INTO `customers_table` (`customer_id`, `customer_name`, `email`, `phone`, `address`) VALUES
-(1, 'Peter Lim', 'peterlim@gmail.com', 86268921, '86 sixth avenue'),
-(2, 'John Tan', 'johntan22@yahoo.com', 94312682, 'Blk 87 Ah Gao Lane #02-09'),
-(3, 'Yam Seng', 'yamseng@gmail.com', 98432138, 'Yishun Ring Road Blk 99'),
-(4, 'Tom', 'tommyt@yahoo.com', 83423523, 'Sembawang Close Blk 320 #04-20');
+(1, 'Daniel', 'dfung001@e.ntu.edu.sg', 98304575, 'Toa Payoh Blk 53 Lorong 5'),
+(2, 'Daniel', 'dfung001@e.ntu.edu.sg', 98304575, 'Toa Payoh Blk 53 Lorong 5');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
