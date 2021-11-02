@@ -25,7 +25,7 @@
   $result = $db -> query($query); //query submission
   // print_r($result);
   // echo "{$result}";
-  $num_results = $result->num_rows; //retrieve num of rows in result set    
+  $num_results = $result->num_rows; //retrieve num of rows in result set   
   $item_names = array();
   $item_size = array();
   $item_quantity = array();
@@ -84,7 +84,7 @@
             <div class='submitinfoBtn' align='center'><input type="submit" id="submitinfoBtn" name="submit" value="Submit" /></div>
         </form><br><br><br>
         <?php 
-          if ($order_id) {
+          if ($num_results) {
             echo "<table class='itemsorderedTable'>
               <tr>
                 <th style='font-size:x-large;background-color:#e8e8e8' colspan='4'>Items Ordered</th>
@@ -116,6 +116,9 @@
                 <td colspan='2'style='font-size: 18px'><b>Estimated delivery:</b> {$deliveryDate}</td>
                 </tr>        
             </table>";
+          } 
+          elseif ($num_results == '0') {
+            echo "<div align='center' style='font-size: 18px;'>Sorry, Order ID not found in our database. Please try again.</div>";
           }
         ?>
           </main>
