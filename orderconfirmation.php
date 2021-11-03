@@ -154,7 +154,7 @@ if (!$customer_name || !$customer_email || !$customer_contact || !$customer_addr
             <td><?php echo $arr[$i-1]['address']?></td>
           </tr>
           <tr>
-            <th>Order Date & Time: </th>
+            <th>Order Date: </th>
             <td><?php echo $arr[$i-1]['order_date']?></td>
           </tr>
         </table>
