@@ -115,7 +115,7 @@
         <h3>Customer Service</h3>
         <br />
         Tel: +65 6888 8888<br /><br />
-        Email: <a href="mailto:cakeshop4717@f34.com">Dames.4717@gmail.com</a
+        Email: <a href="mailto:Dames.4717@gmail.com">Dames.4717@gmail.com</a
         ><br /><br />
         <u><a href="myOrders.php">Track Your Order</a></u>
       </div>
